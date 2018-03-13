@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: A935ABAC-6C60-4AE3-9434-B9BCC1182A34
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/get-azurermapimanagementlogger
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementLogger.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementLogger.md
 ---
 
 # Get-AzureRmApiManagementLogger
@@ -15,13 +13,13 @@ Gets API Management Logger objects.
 
 ## SYNTAX
 
-### Get all loggers (Default)
+### GetAllLoggers (Default)
 ```
 Get-AzureRmApiManagementLogger -Context <PsApiManagementContext> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### Get by logger ID
+### GetByLoggerId
 ```
 Get-AzureRmApiManagementLogger -Context <PsApiManagementContext> -LoggerId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -54,24 +52,9 @@ This command removes a logger that has the ID Logger123.
 Specifies a **PsApiManagementContext** object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Type: PsApiManagementContext
 Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -LoggerId
-Specifies the ID of the specific logger to get.
-
-```yaml
-Type: System.String
-Parameter Sets: Get by logger ID
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -84,7 +67,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with azure.
  
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
 
@@ -95,10 +78,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LoggerId
+Specifies the ID of the specific logger to get.
+
+```yaml
+Type: String
+Parameter Sets: GetByLoggerId
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

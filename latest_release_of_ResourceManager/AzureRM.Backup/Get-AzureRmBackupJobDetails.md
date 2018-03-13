@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.AzureBackup.dll-Help.xml
 Module Name: AzureRM.Backup
 ms.assetid: 6187F603-5298-4854-94F3-0C38FCF3125F
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/get-azurermbackupjobdetails
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Get-AzureRmBackupJobDetails.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Get-AzureRmBackupJobDetails.md
 ---
 
 # Get-AzureRmBackupJobDetails
@@ -63,14 +61,29 @@ This command displays the recommended action from the $JobDetails variable that 
 
 ## PARAMETERS
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Job
 Specifies a job for which this cmdlet gets details.
 To obtain an **AzureRmBackupJob** object, use the Get-AzureRmBackupJob cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupJob
+Type: AzureRMBackupJob
 Parameter Sets: JobsFiltersSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -85,9 +98,9 @@ The ID is the **InstanceId** property of an **AzureRmBackupJob** object.
 To obtain an **AzureRmBackupJob** object, use Get-AzureRmBackupJob.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IdFiltersSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -101,26 +114,11 @@ Specifies the Backup vault for which this cmdlet gets job details.
 To obtain an **AzureRmBackupVault** object, use the Get-AzureRmBackupVault cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupVault
+Type: AzureRMBackupVault
 Parameter Sets: IdFiltersSet
-Aliases:
+Aliases: 
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

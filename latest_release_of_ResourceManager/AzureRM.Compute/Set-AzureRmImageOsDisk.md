@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 online version:
 schema: 2.0.0
 content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmImageOsDisk.md
@@ -17,7 +16,7 @@ Sets the operating system disk properties on an image object.
 ```
 Set-AzureRmImageOsDisk [-Image] <Image> [[-OsType] <OperatingSystemTypes>]
  [[-OsState] <OperatingSystemStateTypes>] [[-BlobUri] <String>] [-Caching <CachingTypes>] [-DiskSizeGB <Int32>]
- [-SnapshotId <String>] [-ManagedDiskId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-StorageAccountType <StorageAccountTypes>] [-SnapshotId <String>] [-ManagedDiskId <String>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
@@ -54,9 +53,9 @@ The final command creates an image named 'ImageName01' in resource group 'Resour
 Specifies the Uri of the blob.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -69,9 +68,9 @@ Accept wildcard characters: False
 Specifies the caching mode of the disk.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.CachingTypes]
+Type: CachingTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: None, ReadOnly, ReadWrite
 
 Required: False
@@ -85,9 +84,9 @@ Accept wildcard characters: False
 Specifies the size of the disk in GB.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -100,9 +99,9 @@ Accept wildcard characters: False
 Specifies a local image object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.Image
+Type: Image
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -115,9 +114,9 @@ Accept wildcard characters: False
 Specifies the ID of a managed disk.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -130,9 +129,9 @@ Accept wildcard characters: False
 Specifies the OS state.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.OperatingSystemStateTypes]
+Type: OperatingSystemStateTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Generalized, Specialized
 
 Required: False
@@ -146,9 +145,9 @@ Accept wildcard characters: False
 Specifies the OS type.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.OperatingSystemTypes]
+Type: OperatingSystemTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Windows, Linux
 
 Required: False
@@ -162,9 +161,24 @@ Accept wildcard characters: False
 Specifies the ID of a snapshot.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -StorageAccountType
+The Storage Account type of Os Image Disk
+
+```yaml
+Type: StorageAccountTypes
+Parameter Sets: (All)
+Aliases: 
 
 Required: False
 Position: Named
@@ -177,7 +191,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -192,22 +206,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -235,3 +236,4 @@ System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, Pub
 ## NOTES
 
 ## RELATED LINKS
+

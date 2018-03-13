@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: BF80D456-DAB1-4B51-B50F-A75C2C66A472
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Add-AzureRmVMNetworkInterface.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Add-AzureRmVMNetworkInterface.md
 ---
 
 # Add-AzureRmVMNetworkInterface
@@ -17,15 +14,14 @@ Adds a network interface to a virtual machine.
 
 ### GetNicFromNicId (Default)
 ```
-Add-AzureRmVMNetworkInterface [-VM] <PSVirtualMachine> [-Id] <String> [-Primary]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Add-AzureRmVMNetworkInterface [-VM] <PSVirtualMachine> [-Id] <String> [-Primary] [<CommonParameters>]
 ```
 
 ### GetNicFromNicObject
 ```
 Add-AzureRmVMNetworkInterface [-VM] <PSVirtualMachine>
  [-NetworkInterface] <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSNetworkInterface]>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -66,7 +62,7 @@ Specifies the ID of a network interface to add to a virtual machine.
 You can use the [Get-AzureRmNetworkInterface](./Get-AzureRmNetworkInterface.md) cmdlet to obtain a network interface.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: GetNicFromNicId
 Aliases: NicId, NetworkInterfaceId
 
@@ -83,7 +79,7 @@ Specifies the network interface.
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSNetworkInterface]
 Parameter Sets: GetNicFromNicObject
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -96,9 +92,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet adds the network interface as the primary interface.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: GetNicFromNicId
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -113,7 +109,7 @@ To create a virtual machine, use the **New-AzureRmVMConfig** cmdlet.
 To obtain an existing virtual machine, use the **Get-AzureRmVM** cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Type: PSVirtualMachine
 Parameter Sets: (All)
 Aliases: VMProfile
 
@@ -124,23 +120,13 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

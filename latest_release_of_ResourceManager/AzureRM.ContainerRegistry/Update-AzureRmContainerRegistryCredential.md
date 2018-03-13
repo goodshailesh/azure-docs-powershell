@@ -27,6 +27,12 @@ Update-AzureRmContainerRegistryCredential -Registry <PSContainerRegistry> -Passw
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+### ResourceIdParameterSet
+```
+Update-AzureRmContainerRegistryCredential -PasswordName <PasswordName> -ResourceId <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 The Update-AzureRmContainerRegistryCredential cmdlet regenerates a login credential for a container registry.
 
@@ -50,7 +56,7 @@ Admin user has to be enabled for the container registry \`MyRegistry\` to regene
 Container Registry Name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: NameResourceGroupParameterSet
 Aliases: ContainerRegistryName, RegistryName, ResourceName
 
@@ -66,15 +72,15 @@ The name of password to regenerate.
 Allowed values: password, password2.
 
 ```yaml
-Type: Microsoft.Azure.Management.ContainerRegistry.Models.PasswordName
+Type: PasswordName
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Password, Password2
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -82,9 +88,9 @@ Accept wildcard characters: False
 Container Registry Object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ContainerRegistry.PSContainerRegistry
+Type: PSContainerRegistry
 Parameter Sets: RegistryObjectParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -97,9 +103,9 @@ Accept wildcard characters: False
 Resource Group Name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: NameResourceGroupParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -112,7 +118,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -128,7 +134,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -143,7 +149,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
 
@@ -151,6 +157,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+The container registry resource id
+
+```yaml
+Type: String
+Parameter Sets: ResourceIdParameterSet
+Aliases: Id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

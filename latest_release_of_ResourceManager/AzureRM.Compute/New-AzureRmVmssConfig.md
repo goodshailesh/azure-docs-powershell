@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: CE32F620-8DB2-4004-8012-F1C4AA235B60
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/New-AzureRmVmssConfig.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/New-AzureRmVmssConfig.md
 ---
 
 # New-AzureRmVmssConfig
@@ -22,7 +19,8 @@ New-AzureRmVmssConfig [[-Overprovision] <Boolean>] [[-Location] <String>] [[-Tag
  [[-NetworkInterfaceConfiguration] <VirtualMachineScaleSetNetworkConfiguration[]>]
  [[-Extension] <VirtualMachineScaleSetExtension[]>] [-SinglePlacementGroup <Boolean>] [-PlanName <String>]
  [-PlanPublisher <String>] [-PlanProduct <String>] [-PlanPromotionCode <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RecoveryPolicyMode <RecoveryMode>] [-BootDiagnostic <BootDiagnostics>] [-LicenseType <String>]
+ [-IdentityType <ResourceIdentityType>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,17 +55,62 @@ The second command uses the **New-AzureRmVmss** cmdlet to create a VMSS that use
 
 ## PARAMETERS
 
+### -BootDiagnostic
+Specifies the virtual machine scale set boot diagnostics profile.
+
+```yaml
+Type: BootDiagnostics
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Extension
 Specifies the extension information object for the VMSS.
 You can use the **Add-AzureRmVmssExtension** cmdlet to add this object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSetExtension[]
+Type: VirtualMachineScaleSetExtension[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 10
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -IdentityType
+Specify the identity of the virtual machine scale set, if configured.
+
+```yaml
+Type: ResourceIdentityType
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -LicenseType
+Specify the license type, which is for bringing your own license scenario.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -77,9 +120,9 @@ Accept wildcard characters: False
 Specifies the Azure location where the VMSS is created.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -93,9 +136,9 @@ Specifies the network profile object that contains the networking properties for
 You can use the **Add-AzureRmVmssNetworkInterfaceConfiguration** cmdlet to add this object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSetNetworkConfiguration[]
+Type: VirtualMachineScaleSetNetworkConfiguration[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 9
@@ -109,9 +152,9 @@ Specifies the operating system profile object that contains the operating system
 You can use the **Set-AzureRmVmssOsProfile** cmdlet to set this object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSetOSProfile
+Type: VirtualMachineScaleSetOSProfile
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 7
@@ -124,9 +167,9 @@ Accept wildcard characters: False
 Indicates whether the cmdlet overprovisions the VMSS.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: Boolean
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -139,9 +182,9 @@ Accept wildcard characters: False
 Specifies the plan name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -154,9 +197,9 @@ Accept wildcard characters: False
 Specifies the plan product.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -169,9 +212,9 @@ Accept wildcard characters: False
 Specifies the plan promotion code.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -184,9 +227,24 @@ Accept wildcard characters: False
 Specifies the plan publisher.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RecoveryPolicyMode
+Specify the recovery policy.
+
+```yaml
+Type: RecoveryMode
+Parameter Sets: (All)
+Aliases: 
 
 Required: False
 Position: Named
@@ -199,9 +257,9 @@ Accept wildcard characters: False
 Specifies the single placement group.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: Boolean
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -214,9 +272,9 @@ Accept wildcard characters: False
 Specifies the number of instances in the VMSS.
 
 ```yaml
-Type: System.Nullable`1[System.Int64]
+Type: Int64
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -229,9 +287,9 @@ Accept wildcard characters: False
 Specifies the size of all the instances of VMSS.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: AccountType
 
 Required: False
 Position: 3
@@ -249,9 +307,9 @@ The acceptable values for this parameter are:
 - Basic
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -265,9 +323,9 @@ Specifies the storage profile object that contains the disk properties for the V
 You can use the **Set-AzureRmVmssStorageProfile** cmdlet to set this object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSetStorageProfile
+Type: VirtualMachineScaleSetStorageProfile
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 8
@@ -280,9 +338,9 @@ Accept wildcard characters: False
 Specifies the tags that will be assigned to the VMSS.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -300,9 +358,9 @@ The acceptable values for this parameter are:
 - Manual
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.UpgradeMode]
+Type: UpgradeMode
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Automatic, Manual
 
 Required: False
@@ -316,7 +374,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -331,22 +389,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -359,6 +404,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

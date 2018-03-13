@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: FC6BC096-DBC4-48DA-A366-B87EB18A0496
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVmss.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVmss.md
 ---
 
 # Get-AzureRmVmss
@@ -15,16 +12,15 @@ Gets the properties of a VMSS.
 
 ## SYNTAX
 
-### InvokeByDynamicParameters (Default)
+### DefaultParameter (Default)
 ```
-Get-AzureRmVmss [-DefaultProfile <IAzureContextContainer>] [[-ResourceGroupName] <String>]
- [[-VMScaleSetName] <String>] [<CommonParameters>]
+Get-AzureRmVmss [[-ResourceGroupName] <String>] [[-VMScaleSetName] <String>] [<CommonParameters>]
 ```
 
-### InvokeByDynamicParametersForFriendMethod
+### FriendMethod
 ```
-Get-AzureRmVmss [-DefaultProfile <IAzureContextContainer>] [[-ResourceGroupName] <String>]
- [[-VMScaleSetName] <String>] [-InstanceView] [<CommonParameters>]
+Get-AzureRmVmss [[-ResourceGroupName] <String>] [[-VMScaleSetName] <String>] [-InstanceView]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,9 +45,9 @@ Since the command does not specify the *InstanceView* switch parameter, the cmdl
 Indicates that this cmdlet gets only the instance view of the virtual machine.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InvokeByDynamicParametersForFriendMethod
-Aliases:
+Type: SwitchParameter
+Parameter Sets: FriendMethod
+Aliases: 
 
 Required: True
 Position: 3
@@ -64,9 +60,9 @@ Accept wildcard characters: False
 Specifies the name of the Resource Group of the VMSS.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -79,7 +75,7 @@ Accept wildcard characters: False
 Species the name of the VMSS.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: Name
 
@@ -90,23 +86,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

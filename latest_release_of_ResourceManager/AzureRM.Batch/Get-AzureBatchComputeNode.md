@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: 93614655-A8F2-4A67-887D-43D41AB91F82
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/get-azurebatchcomputenode
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchComputeNode.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchComputeNode.md
 ---
 
 # Get-AzureBatchComputeNode
@@ -152,14 +150,29 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -169,9 +182,9 @@ This cmdlet returns compute nodes that match the filter that this parameter spec
 If you do not specify a filter, this cmdlet returns all compute nodes for the pool.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ODataFilter, ParentObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -185,9 +198,9 @@ Specifies the ID of the compute node that this cmdlet gets from the pool.
 You cannot specify wildcard characters.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -202,9 +215,9 @@ If you specify a value of zero (0) or less, the cmdlet does not use an upper lim
 The default value is 1000.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: ODataFilter, ParentObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -218,9 +231,9 @@ Specifies the pool, as a **PSCloudPool** object, that contains the compute nodes
 To obtain a **PSCloudPool** object, use the Get-AzureBatchPool cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSCloudPool
+Type: PSCloudPool
 Parameter Sets: ParentObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -233,9 +246,9 @@ Accept wildcard characters: False
 Specifies the ID of the pool that contains the compute nodes.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ODataFilter, Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -249,24 +262,9 @@ Specifies an OData select clause.
 Specify a value for this parameter to get specific properties rather than all object properties.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: 
 
 Required: False
 Position: Named

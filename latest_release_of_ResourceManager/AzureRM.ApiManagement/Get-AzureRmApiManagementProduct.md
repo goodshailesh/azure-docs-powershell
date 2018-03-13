@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: B64E9C13-97A6-4E8B-92DB-EFAF8A48C5B8
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/get-azurermapimanagementproduct
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementProduct.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementProduct.md
 ---
 
 # Get-AzureRmApiManagementProduct
@@ -15,19 +13,19 @@ Gets a list or a particular product.
 
 ## SYNTAX
 
-### Get all producst (Default)
+### GetAllProducts (Default)
 ```
 Get-AzureRmApiManagementProduct -Context <PsApiManagementContext> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### Get by Id
+### GetByProductId
 ```
 Get-AzureRmApiManagementProduct -Context <PsApiManagementContext> -ProductId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Get by Title
+### GetByTitle
 ```
 Get-AzureRmApiManagementProduct -Context <PsApiManagementContext> [-Title <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -60,9 +58,9 @@ This command get an API Management product by ID.
 Specifies an instance of a **PsApiManagementContext** object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Type: PsApiManagementContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -71,13 +69,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProductId
 Specifies the identifier of the product to search for.
 
 ```yaml
-Type: System.String
-Parameter Sets: Get by Id
-Aliases:
+Type: String
+Parameter Sets: GetByProductId
+Aliases: 
 
 Required: True
 Position: Named
@@ -91,9 +104,9 @@ Specifies the title of the product to look for.
 If specified, the cmdlet attempts to get the product by title.
 
 ```yaml
-Type: System.String
-Parameter Sets: Get by Title
-Aliases:
+Type: String
+Parameter Sets: GetByTitle
+Aliases: 
 
 Required: False
 Position: Named
@@ -102,25 +115,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
- 
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

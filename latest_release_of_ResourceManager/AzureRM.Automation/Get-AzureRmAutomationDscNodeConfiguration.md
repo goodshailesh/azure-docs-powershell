@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ResourceManager.Automation.dll-Help.xml
 Module Name: AzureRM.Automation
 ms.assetid: 89C931AE-DA81-47A7-80E4-159C36497DA0
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.automation/get-azurermautomationdscnodeconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Get-AzureRmAutomationDscNodeConfiguration.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Get-AzureRmAutomationDscNodeConfiguration.md
 ---
 
 # Get-AzureRmAutomationDscNodeConfiguration
@@ -67,9 +65,9 @@ This command gets metadata for a DSC node configuration with the name ContosoCon
 Specifies the name of an Automation account that contains the DSC node configurations for which this cmdlet gets metadata.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -82,9 +80,9 @@ Accept wildcard characters: False
 Specifies the name of DSC configuration for which this cmdlet gets node configuration metadata.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByConfigurationName
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -93,11 +91,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the name of the DSC node configuration for which this cmdlet gets metadata.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByNodeConfigurationName
 Aliases: NodeConfigurationName
 
@@ -113,9 +126,9 @@ Specifies the name of a resource group.
 This cmdlet gets metadata for DSC node configurations in the resource group that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -132,25 +145,10 @@ Valid values are:
 - Good
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByAll, ByConfigurationName
-Aliases:
+Aliases: 
 Accepted values: Good, Bad
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -163,6 +161,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

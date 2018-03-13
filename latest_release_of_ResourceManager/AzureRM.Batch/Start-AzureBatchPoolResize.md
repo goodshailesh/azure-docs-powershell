@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: 82DC8DC4-D8EC-4847-A54C-B779256FD590
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/start-azurebatchpoolresize
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Start-AzureBatchPoolResize.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Start-AzureBatchPoolResize.md
 ---
 
 # Start-AzureBatchPoolResize
@@ -16,7 +14,8 @@ Starts to resize a pool.
 ## SYNTAX
 
 ```
-Start-AzureBatchPoolResize [-Id] <String> -TargetDedicated <Int32> [-ResizeTimeout <TimeSpan>]
+Start-AzureBatchPoolResize [-Id] <String> [-TargetDedicatedComputeNodes <Int32>]
+ [-TargetLowPriorityComputeNodes <Int32>] [-ResizeTimeout <TimeSpan>]
  [-ComputeNodeDeallocationOption <ComputeNodeDeallocationOption>] -BatchContext <BatchAccountContext>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
@@ -55,9 +54,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -70,10 +69,25 @@ Accept wildcard characters: False
 Specifies a deallocation option for the resizing operation that this cmdlet starts.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Batch.Common.ComputeNodeDeallocationOption]
+Type: ComputeNodeDeallocationOption
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Requeue, Terminate, TaskCompletion, RetainedData
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -86,9 +100,9 @@ Accept wildcard characters: False
 Specifies the ID of the pool that this cmdlet resizes.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -102,9 +116,9 @@ Specifies a time-out period for the resizing operation.
 If the pool does not reach the target size by this time, the resize operation stops.
 
 ```yaml
-Type: System.Nullable`1[System.TimeSpan]
+Type: TimeSpan
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -113,26 +127,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetDedicated
-Specifies the target number of dedicated compute nodes.```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
+### -TargetDedicatedComputeNodes
+The number of target dedicated compute nodes.
 
-Required: True
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: TargetDedicated
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
+### -TargetLowPriorityComputeNodes
+The number of target low-priority compute nodes.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: Int32
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: 
 
 Required: False
 Position: Named

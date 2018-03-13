@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: 38ED2854-23D0-400E-A5C8-239346B2AF99
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/get-azurebatchnodefile
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchNodeFile.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchNodeFile.md
 ---
 
 # Get-AzureBatchNodeFile
@@ -17,13 +15,13 @@ Gets the properties of Batch node files.
 
 ### ComputeNode_Id (Default)
 ```
-Get-AzureBatchNodeFile [-PoolId] <String> [-ComputeNodeId] <String> [[-Name] <String>]
+Get-AzureBatchNodeFile [-PoolId] <String> [-ComputeNodeId] <String> [[-Path] <String>]
  -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### Task_Id
 ```
-Get-AzureBatchNodeFile -JobId <String> -TaskId <String> [[-Name] <String>] -BatchContext <BatchAccountContext>
+Get-AzureBatchNodeFile -JobId <String> -TaskId <String> [[-Path] <String>] -BatchContext <BatchAccountContext>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -148,9 +146,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -164,9 +162,9 @@ Specifies the compute node, as a **PSComputeNode** object, that contains the Bat
 To obtain a compute node object, use the Get-AzureBatchComputeNode cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSComputeNode
+Type: PSComputeNode
 Parameter Sets: ParentComputeNode
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -179,9 +177,9 @@ Accept wildcard characters: False
 Specifies the ID of the compute node that contains the Batch node files.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ComputeNode_Id, ComputeNode_ODataFilter
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -190,14 +188,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Filter
 Specifies an OData filter clause.
 This cmdlet returns properties for node files that match the filter that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Task_ODataFilter, ParentTask, ComputeNode_ODataFilter, ParentComputeNode
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -210,9 +223,9 @@ Accept wildcard characters: False
 Specifies the ID of the job that contains the target task.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Task_Id, Task_ODataFilter
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -227,9 +240,9 @@ If you specify a value of zero (0) or less, the cmdlet does not use an upper lim
 The default value is 1000.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: Task_ODataFilter, ParentTask, ComputeNode_ODataFilter, ParentComputeNode
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -238,11 +251,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-Specifies the name of the node file for which this cmdlet retrieves properties. You cannot specify wildcard characters.```yaml
-Type: System.String
+### -Path
+Specifies the path of the node file for which this cmdlet retrieves properties.
+You cannot specify wildcard characters.
+
+```yaml
+Type: String
 Parameter Sets: ComputeNode_Id, Task_Id
-Aliases:
+Aliases: Name
 
 Required: False
 Position: 2
@@ -255,9 +271,9 @@ Accept wildcard characters: False
 Specifies the ID of the pool that contains the compute node from which to get properties of node files.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ComputeNode_Id, ComputeNode_ODataFilter
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -271,9 +287,9 @@ Indicates that this cmdlet returns a recursive list of files.
 Otherwise, it returns only the files in the root folder.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Task_ODataFilter, ParentTask, ComputeNode_ODataFilter, ParentComputeNode
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -287,9 +303,9 @@ Specifies the task, as a **PSCloudTask** object, with which the node files are a
 To obtain a task object, use the Get-AzureBatchTask cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSCloudTask
+Type: PSCloudTask
 Parameter Sets: ParentTask
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -302,29 +318,14 @@ Accept wildcard characters: False
 Specifies the ID of the task for which this cmdlet gets properties of node files.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Task_Id, Task_ODataFilter
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

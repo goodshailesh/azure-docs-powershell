@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ResourceManager.Automation.dll-Help.xml
 Module Name: AzureRM.Automation
 ms.assetid: 1246C3AC-A123-4EA1-B99E-458A85789109
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.automation/get-azurermautomationdscnodereport
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Get-AzureRmAutomationDscNodeReport.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Get-AzureRmAutomationDscNodeReport.md
 ---
 
 # Get-AzureRmAutomationDscNodeReport
@@ -80,9 +78,9 @@ Specifies the name of an Automation account.
 This cmdlet exports reports for a DSC node that belongs to the account that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -91,14 +89,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EndTime
 Specifies an end time.
 This cmdlet gets reports that Automation received before this time.
 
 ```yaml
-Type: System.Nullable`1[System.DateTimeOffset]
+Type: DateTimeOffset
 Parameter Sets: ByAll
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -111,7 +124,7 @@ Accept wildcard characters: False
 Specifies the unique ID of the DSC node report for this cmdlet to get.
 
 ```yaml
-Type: System.Guid
+Type: Guid
 Parameter Sets: ById
 Aliases: ReportId
 
@@ -126,9 +139,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets the latest DSC report for the specified node only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: ByLatest
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -141,9 +154,9 @@ Accept wildcard characters: False
 Specifies the unique ID of the DSC node for which this cmdlet gets reports.
 
 ```yaml
-Type: System.Guid
+Type: Guid
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -156,9 +169,9 @@ Accept wildcard characters: False
 Specifies the name of a resource group that contains the DSC node for which this cmdlet gets reports.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -172,9 +185,9 @@ Specifies a start time.
 This cmdlet gets reports that Automation received after this time.
 
 ```yaml
-Type: System.Nullable`1[System.DateTimeOffset]
+Type: DateTimeOffset
 Parameter Sets: ByAll
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -183,25 +196,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: 56604912-53A0-496D-9BDC-472BCE45A6A2
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/update-azurermapimanagementdeployment
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Update-AzureRmApiManagementDeployment.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Update-AzureRmApiManagementDeployment.md
 ---
 
 # Update-AzureRmApiManagementDeployment
@@ -15,7 +13,7 @@ Updates deployment of an API Management Service.
 
 ## SYNTAX
 
-### Specific API Management service (Default)
+### UpdateSpecificService (Default)
 ```
 Update-AzureRmApiManagementDeployment -ResourceGroupName <String> -Name <String> -Location <String>
  -Sku <PsApiManagementSku> -Capacity <Int32> [-VirtualNetwork <PsApiManagementVirtualNetwork>]
@@ -24,7 +22,7 @@ Update-AzureRmApiManagementDeployment -ResourceGroupName <String> -Name <String>
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Update from PsApiManagement instance
+### UpdateFromPsApiManagementInstance
 ```
 Update-AzureRmApiManagementDeployment -ApiManagement <PsApiManagement> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -76,8 +74,8 @@ Specifies additional deployment regions of Azure API Management.
 
 ```yaml
 Type: System.Collections.Generic.IList`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementRegion]
-Parameter Sets: Specific API Management service
-Aliases:
+Parameter Sets: UpdateSpecificService
+Aliases: 
 
 Required: False
 Position: Named
@@ -91,9 +89,9 @@ Specifies the **PsApiManagement** instance to get deployment configuration from.
 Use this parameter if the instance already has all the required changes.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
-Parameter Sets: Update from PsApiManagement instance
-Aliases:
+Type: PsApiManagement
+Parameter Sets: UpdateFromPsApiManagementInstance
+Aliases: 
 
 Required: True
 Position: Named
@@ -106,14 +104,29 @@ Accept wildcard characters: False
 Specifies the SKU capacity of the master Azure API Management deployment region.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: Specific API Management service
-Aliases:
+Type: Int32
+Parameter Sets: UpdateSpecificService
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -124,9 +137,9 @@ To obtain valid locations, use the cmdlet
 Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | where {$_.ResourceTypes[0].ResourceTypeName -eq "service"} | Select-Object Locations
 
 ```yaml
-Type: System.String
-Parameter Sets: Specific API Management service
-Aliases:
+Type: String
+Parameter Sets: UpdateSpecificService
+Aliases: 
 
 Required: True
 Position: Named
@@ -139,9 +152,9 @@ Accept wildcard characters: False
 Specifies the name of API Management that this cmdlet updates.
 
 ```yaml
-Type: System.String
-Parameter Sets: Specific API Management service
-Aliases:
+Type: String
+Parameter Sets: UpdateSpecificService
+Aliases: 
 
 Required: True
 Position: Named
@@ -155,9 +168,9 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -170,9 +183,9 @@ Accept wildcard characters: False
 Specifies the name of resource group under which API Management exists.
 
 ```yaml
-Type: System.String
-Parameter Sets: Specific API Management service
-Aliases:
+Type: String
+Parameter Sets: UpdateSpecificService
+Aliases: 
 
 Required: True
 Position: Named
@@ -191,9 +204,9 @@ The acceptable values for this parameter are:
 - Premium
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
-Parameter Sets: Specific API Management service
-Aliases:
+Type: PsApiManagementSku
+Parameter Sets: UpdateSpecificService
+Aliases: 
 Accepted values: Developer, Standard, Premium
 
 Required: True
@@ -207,9 +220,9 @@ Accept wildcard characters: False
 Specifies the Virtual Network configuration of the master Azure API Management deployment region.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
-Parameter Sets: Specific API Management service
-Aliases:
+Type: PsApiManagementVirtualNetwork
+Parameter Sets: UpdateSpecificService
+Aliases: 
 
 Required: False
 Position: Named
@@ -231,30 +244,15 @@ The API Management deployment has an external facing virtual address.
 The API Management deployment has an intranet facing virtual address.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVpnType
-Parameter Sets: Specific API Management service
-Aliases:
+Type: PsApiManagementVpnType
+Parameter Sets: UpdateSpecificService
+Aliases: 
 Accepted values: None, External, Internal
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
- 
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

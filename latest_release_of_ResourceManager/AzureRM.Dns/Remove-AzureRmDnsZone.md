@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Dns.dll-Help.xml
 Module Name: AzureRM.Dns
 ms.assetid: A8E230A0-5057-40BC-81CD-6D397A503A84
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.dns/remove-azurermdnszone
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Dns/Commands.Dns/help/Remove-AzureRmDnsZone.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Dns/Commands.Dns/help/Remove-AzureRmDnsZone.md
 ---
 
 # Remove-AzureRmDnsZone
@@ -50,6 +48,21 @@ This command removes the zone named myzone.com from the resource group named MyR
 
 ## PARAMETERS
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 This parameter is deprecated for this cmdlet.
 It will be removed in a future release.
@@ -57,9 +70,9 @@ It will be removed in a future release.
 To control whether this cmdlet prompts you for confirmation, use the *Confirm* parameter.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -75,9 +88,9 @@ You must also specify the *ResourceGroupName* parameter.
 Alternatively, you can specify the DNS zone using the *Zone* parameter.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Fields
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -93,9 +106,9 @@ This provides protection for concurrent zone changes.
 This can be suppressed using the *Overwrite* parameter, which deletes the zone regardless of concurrent changes.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Object
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -108,9 +121,9 @@ Accept wildcard characters: False
 passthru
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -126,9 +139,9 @@ You must also specify the *ZoneName* parameter.
 Alternatively, you can specify the DNS zone using a **DnsZone** object, passed via either the pipeline or the *Zone* parameter.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Fields
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -144,9 +157,9 @@ The **DnsZone** object passed can also be passed via the pipeline.
 Alternatively, you can specify the DNS zone to delete by using the *ZoneName* and *ResourceGroupName* parameters.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Dns.DnsZone
+Type: DnsZone
 Parameter Sets: Object
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -159,7 +172,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -175,28 +188,13 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

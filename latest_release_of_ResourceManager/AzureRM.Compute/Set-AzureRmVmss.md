@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 6442E5BB-D59D-483B-8AC5-2586C6C1E925
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVmss.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVmss.md
 ---
 
 # Set-AzureRmVmss
@@ -15,16 +12,16 @@ Sets specific actions on a specified VMSS.
 
 ## SYNTAX
 
-### InvokeByDynamicParameters (Default)
+### DefaultParameter (Default)
 ```
-Set-AzureRmVmss [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-ResourceGroupName] <String>
- [-VMScaleSetName] <String> [-Reimage] [<CommonParameters>]
+Set-AzureRmVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String> [-Reimage] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### InvokeByDynamicParametersForFriendMethod
+### FriendMethod
 ```
-Set-AzureRmVmss [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-ResourceGroupName] <String>
- [-VMScaleSetName] <String> [-ReimageAll] [<CommonParameters>]
+Set-AzureRmVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String> [-ReimageAll] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,9 +43,9 @@ This command reimages the VMSS named ContosoVMSS that belongs to the resource gr
 Indicates that the cmdlet reimages the VMSS.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InvokeByDynamicParameters
-Aliases:
+Type: SwitchParameter
+Parameter Sets: DefaultParameter
+Aliases: 
 
 Required: True
 Position: 3
@@ -61,9 +58,9 @@ Accept wildcard characters: False
 Indicates that the cmdlet reimages all the disks in the VMSS.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InvokeByDynamicParametersForFriendMethod
-Aliases:
+Type: SwitchParameter
+Parameter Sets: FriendMethod
+Aliases: 
 
 Required: True
 Position: 3
@@ -76,9 +73,9 @@ Accept wildcard characters: False
 Specifies the name of the resource group of the VMSS.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -91,7 +88,7 @@ Accept wildcard characters: False
 Species the name of the VMSS for which this cmdlet sets actions on.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: Name
 
@@ -106,7 +103,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -121,22 +118,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -149,6 +133,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 9BE2E42C-594B-4B67-866C-BBA3B84AA5FD
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Add-AzureRmVmssAdditionalUnattendContent.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Add-AzureRmVmssAdditionalUnattendContent.md
 ---
 
 # Add-AzureRmVmssAdditionalUnattendContent
@@ -18,7 +15,7 @@ Adds information to the unattended Windows Setup answer file.
 ```
 Add-AzureRmVmssAdditionalUnattendContent [-VirtualMachineScaleSet] <VirtualMachineScaleSet>
  [[-PassName] <PassNames>] [[-ComponentName] <ComponentNames>] [[-SettingName] <SettingNames>]
- [[-Content] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-Content] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,9 +37,9 @@ Specifies the name of the component to configure with the added content.
 The only allowable value is Microsoft-Windows-Shell-Setup.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.ComponentNames]
+Type: ComponentNames
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: MicrosoftWindowsShellSetup
 
 Required: False
@@ -56,9 +53,9 @@ Accept wildcard characters: False
 Specifies the XML formatted content that is added to the unattend.xml file for the specified path and component.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -72,9 +69,9 @@ Specifies the name of the pass that the content applies to.
 The only allowable value is oobeSystem.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.PassNames]
+Type: PassNames
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: OobeSystem
 
 Required: False
@@ -92,9 +89,9 @@ The acceptable values for this parameter are::
 - AutoLogon
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.SettingNames]
+Type: SettingNames
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: AutoLogon, FirstLogonCommands
 
 Required: False
@@ -109,9 +106,9 @@ Specify the virtual machine **Scale Set** object.
 You can use the [New-AzureRmVmssConfig](./New-AzureRmVmssConfig.md) cmdlet to create the object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSet
+Type: VirtualMachineScaleSet
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -124,7 +121,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -139,22 +136,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -167,6 +151,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

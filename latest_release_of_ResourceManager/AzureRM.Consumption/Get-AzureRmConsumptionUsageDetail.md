@@ -1,10 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Consumption.dll-Help.xml
 Module Name: AzureRM.Consumption
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.consumption/get-azurermconsumptionusagedetail
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Consumption/Commands.Consumption/help/Get-AzureRmConsumptionUsageDetail.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Consumption/Commands.Consumption/help/Get-AzureRmConsumptionUsageDetail.md
 ---
 
 # Get-AzureRmConsumptionUsageDetail
@@ -66,11 +64,26 @@ Get usage details of the subscription that is between 2017-01-17 to 2017-01-19.
 Name of a specific billing period to get the usage details that associate with.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: BillingPeriod
-Aliases:
+Aliases: 
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -81,9 +94,9 @@ Accept wildcard characters: False
 The end date (in UTC) of the usages.
 
 ```yaml
-Type: System.Nullable`1[System.DateTime]
+Type: DateTime
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -96,9 +109,9 @@ Accept wildcard characters: False
 Include additional properties in the usages.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -111,9 +124,9 @@ Accept wildcard characters: False
 Include meter details in the usages.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -126,9 +139,9 @@ Accept wildcard characters: False
 Name of a specific invoice to get the usage details that associate with.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Invoice
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -141,9 +154,9 @@ Accept wildcard characters: False
 Determine the maximum number of records to return.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -156,24 +169,9 @@ Accept wildcard characters: False
 The start date (in UTC) of the usages.
 
 ```yaml
-Type: System.Nullable`1[System.DateTime]
+Type: DateTime
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: 
 
 Required: False
 Position: Named
@@ -196,3 +194,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

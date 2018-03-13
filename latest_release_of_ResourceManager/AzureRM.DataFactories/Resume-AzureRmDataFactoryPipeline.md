@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataFactories.dll-Help.xml
 Module Name: AzureRM.DataFactories
 ms.assetid: F522841A-4246-4028-A754-393D8DADD924
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactories/resume-azurermdatafactorypipeline
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Resume-AzureRmDataFactoryPipeline.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Resume-AzureRmDataFactoryPipeline.md
 ---
 
 # Resume-AzureRmDataFactoryPipeline
@@ -52,9 +50,9 @@ Specifies a **PSDataFactory** object.
 This cmdlet resumes a pipeline that belongs to the data factory that this parameter specifies.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Type: PSDataFactory
 Parameter Sets: ByFactoryObject
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -68,9 +66,9 @@ Specifies the name of a data factory.
 This cmdlet resumes a pipeline that belongs to the data factory that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -79,11 +77,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the name of the pipeline to resume.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: PipelineName
 
@@ -99,9 +112,9 @@ Specifies the name of an Azure resource group.
 This cmdlet resumes a pipeline that belongs to the group that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -114,7 +127,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -130,7 +143,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -141,25 +154,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

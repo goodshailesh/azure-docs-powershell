@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.AzureBackup.dll-Help.xml
 Module Name: AzureRM.Backup
 ms.assetid: 8A638FB1-F530-4E28-BAAE-5382671092C4
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/get-azurermbackupitem
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Get-AzureRmBackupItem.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Get-AzureRmBackupItem.md
 ---
 
 # Get-AzureRmBackupItem
@@ -76,14 +74,29 @@ Specifies a container object for which this cmdlet gets backup items.
 To obtain an **AzureRmBackupContainer**, use the Get-AzureRmBackupContainer cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupContainer
+Type: AzureRMBackupContainer
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -96,9 +109,9 @@ The acceptable values for this parameter are:
 - NotProtected
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Protected, Protecting, NotProtected
 
 Required: False
@@ -114,9 +127,9 @@ The acceptable values for this parameter are: IRPending, Protected, ProtectionEr
 If the *ProtectionStatus* parameter has the value Protected, you can use the *Status* parameter value to filter items.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: IRPending, ProtectionStopped, ProtectionError, Protected
 
 Required: False
@@ -131,25 +144,10 @@ Specifies the type of item that this cmdlet gets.
 Currently, the only supported value is AzureVM.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: AzureVM
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named

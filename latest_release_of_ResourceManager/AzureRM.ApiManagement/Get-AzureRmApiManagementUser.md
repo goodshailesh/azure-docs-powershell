@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: 638B2BF6-23F8-4038-B20B-1CFABFDBF5D3
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/get-azurermapimanagementuser
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementUser.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementUser.md
 ---
 
 # Get-AzureRmApiManagementUser
@@ -15,19 +13,19 @@ Gets a user or users.
 
 ## SYNTAX
 
-### Get all users (Default)
+### GeAllUsers (Default)
 ```
 Get-AzureRmApiManagementUser -Context <PsApiManagementContext> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### Get user by ID
+### GetByUserId
 ```
 Get-AzureRmApiManagementUser -Context <PsApiManagementContext> [-UserId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Find users
+### GetByUser
 ```
 Get-AzureRmApiManagementUser -Context <PsApiManagementContext> [-FirstName <String>] [-LastName <String>]
  [-State <PsApiManagementUserState>] [-Email <String>] [-GroupId <String>]
@@ -85,14 +83,29 @@ This command gets all users within the specified group.
 Specifies an instance of **PsApiManagementContext**.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Type: PsApiManagementContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -102,9 +115,9 @@ If this parameter is specified, this cmdlet finds a user by email.
 This parameter is optional.
 
 ```yaml
-Type: System.String
-Parameter Sets: Find users
-Aliases:
+Type: String
+Parameter Sets: GetByUser
+Aliases: 
 
 Required: False
 Position: Named
@@ -119,9 +132,9 @@ If this parameter is specified, this cmdlet finds a user by first name.
 This parameter is optional.
 
 ```yaml
-Type: System.String
-Parameter Sets: Find users
-Aliases:
+Type: String
+Parameter Sets: GetByUser
+Aliases: 
 
 Required: False
 Position: Named
@@ -136,9 +149,9 @@ If specified, this cmdlet finds all users within the specified group.
 This parameter is optional.
 
 ```yaml
-Type: System.String
-Parameter Sets: Find users
-Aliases:
+Type: String
+Parameter Sets: GetByUser
+Aliases: 
 
 Required: False
 Position: Named
@@ -153,9 +166,9 @@ If specified, this cmdlet finds users by last name.
 This parameter is optional.
 
 ```yaml
-Type: System.String
-Parameter Sets: Find users
-Aliases:
+Type: String
+Parameter Sets: GetByUser
+Aliases: 
 
 Required: False
 Position: Named
@@ -170,9 +183,9 @@ If specified, this cmdlet finds users in this state.
 This parameter is optional.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementUserState]
-Parameter Sets: Find users
-Aliases:
+Type: PsApiManagementUserState
+Parameter Sets: GetByUser
+Aliases: 
 Accepted values: Active, Blocked
 
 Required: False
@@ -188,9 +201,9 @@ If specified, this cmdlet finds the user by this identifier.
 This parameter is optional.
 
 ```yaml
-Type: System.String
-Parameter Sets: Get user by ID
-Aliases:
+Type: String
+Parameter Sets: GetByUserId
+Aliases: 
 
 Required: False
 Position: Named
@@ -199,25 +212,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: F41953F1-9515-4081-8624-6A1494DA4BB2
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVMChefExtension.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVMChefExtension.md
 ---
 
 # Get-AzureRmVMChefExtension
@@ -18,13 +15,13 @@ Gets information about a Chef extension.
 ### Linux
 ```
 Get-AzureRmVMChefExtension [-ResourceGroupName] <String> [-VMName] <String> [[-Name] <String>] [-Status]
- [-Linux] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Linux] [<CommonParameters>]
 ```
 
 ### Windows
 ```
 Get-AzureRmVMChefExtension [-ResourceGroupName] <String> [-VMName] <String> [[-Name] <String>] [-Status]
- [-Windows] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Windows] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,7 +29,7 @@ The **Get-AzureVMChefExtension** cmdlet gets information about a Chef extension 
 
 ## EXAMPLES
 
-### Example 1: Get the details of Chef extension for a Windows virtual machine
+### Example 1: Get the details of Chef extension for a Windows virtual machine-
 ```
 PS C:\> Get-AzureRmVMChefExtension -ResourceGroupName "ResourceGroup001" -VMName "WindowsVM001" -Windows
 ```
@@ -52,9 +49,9 @@ This command gets the Chef extension from a Linux virtual machine named LinuxVM0
 Indicates that this cmdlet works on a Linux virtual machine.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Linux
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -67,7 +64,7 @@ Accept wildcard characters: False
 Specifies the name of the Chef extension.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: ExtensionName
 
@@ -82,9 +79,9 @@ Accept wildcard characters: False
 Specifies the name of the resource group that contains the virtual machine.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -97,9 +94,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets only the instance view of the Chef extension.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -112,7 +109,7 @@ Accept wildcard characters: False
 Specifies the name of a virtual machine.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: ResourceName
 
@@ -127,24 +124,11 @@ Accept wildcard characters: False
 Indicates that this cmdlet is for a Windows virtual machine.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Windows
-Aliases:
+Aliases: 
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -155,6 +139,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataLakeStore.dll-Help.xml
 Module Name: AzureRM.DataLakeStore
 ms.assetid: 90630395-8747-4446-A879-323274811956
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datalakestore/import-azurermdatalakestoreitem
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeStore/Commands.DataLakeStore/help/Import-AzureRmDataLakeStoreItem.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeStore/Commands.DataLakeStore/help/Import-AzureRmDataLakeStoreItem.md
 ---
 
 # Import-AzureRmDataLakeStoreItem
@@ -15,14 +13,14 @@ Uploads a local file or directory to a Data Lake Store.
 
 ## SYNTAX
 
-### No diagnostic logging (Default)
+### NoDiagnosticLogging (Default)
 ```
 Import-AzureRmDataLakeStoreItem [-Account] <String> [-Path] <String> [-Destination] <DataLakeStorePathInstance>
  [-Recurse] [-Resume] [-ForceBinary] [[-PerFileThreadCount] <Int32>] [[-ConcurrentFileCount] <Int32>] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Include diagnostic logging
+### IncludeDiagnosticLogging
 ```
 Import-AzureRmDataLakeStoreItem [-Account] <String> [-Path] <String> [-Destination] <DataLakeStorePathInstance>
  [-Recurse] [-Resume] [-ForceBinary] [[-PerFileThreadCount] <Int32>] [[-ConcurrentFileCount] <Int32>] [-Force]
@@ -48,7 +46,7 @@ This command uploads the file SrcFile.csv and adds it to the MyFiles folder in t
 Specifies the name of the Data Lake Store account.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: AccountName
 
@@ -64,9 +62,9 @@ Specify the maximum number of files to upload in parallel for a folder upload.
 The default value is five (5).
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 7
@@ -75,13 +73,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Destination
 Specifies the Data Lake Store path to which to upload a file or folder, starting with the root directory (/).
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataLakeStore.Models.DataLakeStorePathInstance
+Type: DataLakeStorePathInstance
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
@@ -94,9 +107,9 @@ Accept wildcard characters: False
 Optionally indicates the diagnostic log level to use to record events during the file or folder import. Default is Error.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataLakeStore.Models.LogLevel
-Parameter Sets: Include diagnostic logging
-Aliases:
+Type: LogLevel
+Parameter Sets: IncludeDiagnosticLogging
+Aliases: 
 Accepted values: Debug, Information, Error, None
 
 Required: False
@@ -110,9 +123,9 @@ Accept wildcard characters: False
 Specifies the path for the diagnostic log to record events to during the file or folder import.
 
 ```yaml
-Type: System.String
-Parameter Sets: Include diagnostic logging
-Aliases:
+Type: String
+Parameter Sets: IncludeDiagnosticLogging
+Aliases: 
 
 Required: True
 Position: Named
@@ -125,9 +138,9 @@ Accept wildcard characters: False
 Indicates that this operation can overwrite the destination file if it already exists.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 8
@@ -140,9 +153,9 @@ Accept wildcard characters: False
 Indicates that this operation uploads the file as a binary file.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -155,9 +168,9 @@ Accept wildcard characters: False
 Specifies the local path of the file or folder to upload.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -171,9 +184,9 @@ Specifies the maximum number of threads to use per file.
 The default value is ten (10).
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 6
@@ -186,9 +199,9 @@ Accept wildcard characters: False
 Indicates that this operation should upload all items in all subfolders.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -201,9 +214,9 @@ Accept wildcard characters: False
 Indicates that this operation should resume a previously canceled or failed upload.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -216,7 +229,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -232,7 +245,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -243,25 +256,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

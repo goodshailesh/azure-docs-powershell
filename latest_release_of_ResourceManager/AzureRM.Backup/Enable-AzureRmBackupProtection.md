@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.AzureBackup.dll-Help.xml
 Module Name: AzureRM.Backup
 ms.assetid: DD150A2C-27D5-4119-9B43-FAB82F9F7D5B
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/enable-azurermbackupprotection
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Enable-AzureRmBackupProtection.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Enable-AzureRmBackupProtection.md
 ---
 
 # Enable-AzureRmBackupProtection
@@ -51,14 +49,29 @@ The current cmdlet enables the policy stored in $Policy for the item that the co
 
 ## PARAMETERS
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Item
 Specifies the Backup item for which this cmdlet enables protection.
 To obtain an **AzureRmBackupItem**, use the Get-AzureRmBackupItem cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupContainerContextObject
+Type: AzureRMBackupContainerContextObject
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -72,26 +85,11 @@ Specifies protection policy that this cmdlet associates with an item.
 To obtain an **AzureRmBackupProtectionPolicy** object, use the Get-AzureRmBackupProtectionPolicy cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupProtectionPolicy
+Type: AzureRMBackupProtectionPolicy
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

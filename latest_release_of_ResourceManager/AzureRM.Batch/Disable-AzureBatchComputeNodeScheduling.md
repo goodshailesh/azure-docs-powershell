@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: 2DF5FB4D-A5CB-439C-AC6F-DF2130AF33EC
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/disable-azurebatchcomputenodescheduling
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Disable-AzureBatchComputeNodeScheduling.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Disable-AzureBatchComputeNodeScheduling.md
 ---
 
 # Disable-AzureBatchComputeNodeScheduling
@@ -80,9 +78,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -96,14 +94,29 @@ Specifies an object reference to the compute node where task scheduling is disab
 This object reference is created by using the Get-AzureBatchComputeNode cmdlet and storing the returned compute node object in a variable.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSComputeNode
+Type: PSComputeNode
 Parameter Sets: InputObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -126,9 +139,9 @@ Currently running tasks will be able to complete and data retention periods will
 No new tasks will be scheduled on this node.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Batch.Common.DisableComputeNodeSchedulingOption]
+Type: DisableComputeNodeSchedulingOption
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Requeue, Terminate, TaskCompletion
 
 Required: False
@@ -142,9 +155,9 @@ Accept wildcard characters: False
 Specifies the ID of the compute node where task scheduling is disabled.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -159,27 +172,12 @@ Specifies the ID of the batch pool that contains the compute node where task sch
 If you use the *PoolId* parameter, do not use the *ComputeNode* parameter in that same command.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

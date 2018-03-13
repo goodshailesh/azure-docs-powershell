@@ -18,16 +18,16 @@ Creates a container group.
 ```
 New-AzureRmContainerGroup [-ResourceGroupName] <String> [-Name] <String> [-Image] <String> [-Location <String>]
  [-OsType <String>] [-RestartPolicy <String>] [-Cpu <Int32>] [-MemoryInGB <Double>] [-IpAddressType <String>]
- [-Port <Int32[]>] [-Command <String>] [-EnvironmentVariable <Hashtable>] [-Tag <Hashtable>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DnsNameLabel <String>] [-Port <Int32[]>] [-Command <String>] [-EnvironmentVariable <Hashtable>]
+ [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateContainerGroupWithRegistryParamSet
 ```
 New-AzureRmContainerGroup [-ResourceGroupName] <String> [-Name] <String> [-Image] <String>
  -RegistryCredential <PSCredential> [-Location <String>] [-OsType <String>] [-RestartPolicy <String>]
- [-Cpu <Int32>] [-MemoryInGB <Double>] [-IpAddressType <String>] [-Port <Int32[]>] [-Command <String>]
- [-EnvironmentVariable <Hashtable>] [-RegistryServerDomain <String>] [-Tag <Hashtable>]
+ [-Cpu <Int32>] [-MemoryInGB <Double>] [-IpAddressType <String>] [-DnsNameLabel <String>] [-Port <Int32[]>]
+ [-Command <String>] [-EnvironmentVariable <Hashtable>] [-RegistryServerDomain <String>] [-Tag <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -36,9 +36,9 @@ New-AzureRmContainerGroup [-ResourceGroupName] <String> [-Name] <String> [-Image
 New-AzureRmContainerGroup [-ResourceGroupName] <String> [-Name] <String> [-Image] <String>
  -AzureFileVolumeShareName <String> -AzureFileVolumeAccountCredential <PSCredential>
  -AzureFileVolumeMountPath <String> [-Location <String>] [-OsType <String>] [-RestartPolicy <String>]
- [-Cpu <Int32>] [-MemoryInGB <Double>] [-IpAddressType <String>] [-Port <Int32[]>] [-Command <String>]
- [-EnvironmentVariable <Hashtable>] [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Cpu <Int32>] [-MemoryInGB <Double>] [-IpAddressType <String>] [-DnsNameLabel <String>] [-Port <Int32[]>]
+ [-Command <String>] [-EnvironmentVariable <Hashtable>] [-Tag <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -204,7 +204,7 @@ The storage account credential of the Azure File share to mount where the userna
 ```yaml
 Type: PSCredential
 Parameter Sets: CreateContainerGroupWithAzureFileMountParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -219,7 +219,7 @@ The mount path for the Azure File volume.
 ```yaml
 Type: String
 Parameter Sets: CreateContainerGroupWithAzureFileMountParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -234,7 +234,7 @@ The name of the Azure File share to mount.
 ```yaml
 Type: String
 Parameter Sets: CreateContainerGroupWithAzureFileMountParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -249,7 +249,7 @@ The command to run in the container.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ Default: 1
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -289,13 +289,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DnsNameLabel
+The DNS name label for the IP address.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EnvironmentVariable
 The container environment variables.
 
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -310,7 +325,7 @@ The container image.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -325,7 +340,7 @@ The IP address type.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Public
 
 Required: False
@@ -342,7 +357,7 @@ Default to the location of the resource group.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -373,7 +388,7 @@ The container group name.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -389,7 +404,7 @@ Default: Linux
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Linux, Windows
 
 Required: False
@@ -405,7 +420,7 @@ The port(s) to open. Default: [80]
 ```yaml
 Type: Int32[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -420,7 +435,7 @@ The custom container registry credential.
 ```yaml
 Type: PSCredential
 Parameter Sets: CreateContainerGroupWithRegistryParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -450,7 +465,7 @@ The resource group name.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -465,7 +480,7 @@ The container restart policy. Default: Always
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Always, Never, OnFailure
 
 Required: False
@@ -481,7 +496,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -536,4 +551,3 @@ System.Collections.Hashtable
 ## NOTES
 
 ## RELATED LINKS
-

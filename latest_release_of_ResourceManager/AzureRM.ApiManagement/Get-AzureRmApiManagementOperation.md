@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: D5EB9AFA-B56C-45E2-838B-4555ED1EF8F8
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/get-azurermapimanagementoperation
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementOperation.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementOperation.md
 ---
 
 # Get-AzureRmApiManagementOperation
@@ -15,13 +13,13 @@ Gets a list or a specified API Operation.
 
 ## SYNTAX
 
-### All API Operations (Default)
+### GetAllApiOperations (Default)
 ```
 Get-AzureRmApiManagementOperation -Context <PsApiManagementContext> -ApiId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Find by ID
+### GetById
 ```
 Get-AzureRmApiManagementOperation -Context <PsApiManagementContext> -ApiId <String> -OperationId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -54,9 +52,9 @@ This command gets an API management operation by operation ID named Operation000
 Specifies the identifier of the API Operation.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -69,24 +67,9 @@ Accept wildcard characters: False
 Specifies the instance of the **PsApiManagementContext** object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Type: PsApiManagementContext
 Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -OperationId
-Specifies the operation identifier.
-
-```yaml
-Type: System.String
-Parameter Sets: Find by ID
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -99,7 +82,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with azure.
  
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
 
@@ -110,10 +93,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -OperationId
+Specifies the operation identifier.
+
+```yaml
+Type: String
+Parameter Sets: GetById
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

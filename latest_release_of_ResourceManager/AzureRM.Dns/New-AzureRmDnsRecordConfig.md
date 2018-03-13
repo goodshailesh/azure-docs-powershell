@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Dns.dll-Help.xml
 Module Name: AzureRM.Dns
 ms.assetid: AD97BCAF-69BA-4C16-8B57-AB243D796B71
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.dns/new-azurermdnsrecordconfig
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Dns/Commands.Dns/help/New-AzureRmDnsRecordConfig.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Dns/Commands.Dns/help/New-AzureRmDnsRecordConfig.md
 ---
 
 # New-AzureRmDnsRecordConfig
@@ -57,6 +55,12 @@ New-AzureRmDnsRecordConfig -Priority <UInt16> -Target <String> -Port <UInt16> -W
 ### CName
 ```
 New-AzureRmDnsRecordConfig -Cname <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Caa
+```
+New-AzureRmDnsRecordConfig -CaaFlags <Byte> -CaaTag <String> -CaaValue <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -183,178 +187,58 @@ To create a **RecordSet** using only one line of pn_PowerShell_short, or to crea
 
 ## PARAMETERS
 
+### -CaaFlags
+The flags for the CAA record to add. Must be a number between 0 and 255.
+
+```yaml
+Type: Byte
+Parameter Sets: Caa
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -CaaTag
+The tag field of the CAA record to add.
+
+```yaml
+Type: String
+Parameter Sets: Caa
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -CaaValue
+The value field for the CAA record to add.
+
+```yaml
+Type: String
+Parameter Sets: Caa
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Cname
 Specifies the domain name for a canonical name (CNAME) record.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CName
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Exchange
-Specifies the mail exchange server name for a mail exchange (MX) record.
-
-```yaml
-Type: System.String
-Parameter Sets: Mx
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Ipv4Address
-Specifies an IPv4 address for an A record.
-
-```yaml
-Type: System.String
-Parameter Sets: A
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Ipv6Address
-Specifies an IPv6 address for an AAAA record.
-
-```yaml
-Type: System.String
-Parameter Sets: Aaaa
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Nsdname
-Specifies the name server name for a name server (NS) record.
-
-```yaml
-Type: System.String
-Parameter Sets: Ns
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Port
-Specifies the port for a service (SRV) record.
-
-```yaml
-Type: System.UInt16
-Parameter Sets: Srv
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Preference
-Specifies the preference for an MX record.
-
-```yaml
-Type: System.UInt16
-Parameter Sets: Mx
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Priority
-Specifies the priority for an SRV record.
-
-```yaml
-Type: System.UInt16
-Parameter Sets: Srv
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Ptrdname
-Specifies the target domain name of a pointer resource (PTR) record.
-
-```yaml
-Type: System.String
-Parameter Sets: Ptr
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Target
-Specifies the target for an SRV record.
-
-```yaml
-Type: System.String
-Parameter Sets: Srv
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Value
-Specifies the value for a TXT record.
-
-```yaml
-Type: System.String
-Parameter Sets: Txt
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Weight
-Specifies the weight for an SRV record.
-
-```yaml
-Type: System.UInt16
-Parameter Sets: Srv
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -367,7 +251,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
 
@@ -375,6 +259,171 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Exchange
+Specifies the mail exchange server name for a mail exchange (MX) record.
+
+```yaml
+Type: String
+Parameter Sets: Mx
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Ipv4Address
+Specifies an IPv4 address for an A record.
+
+```yaml
+Type: String
+Parameter Sets: A
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Ipv6Address
+Specifies an IPv6 address for an AAAA record.
+
+```yaml
+Type: String
+Parameter Sets: Aaaa
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Nsdname
+Specifies the name server name for a name server (NS) record.
+
+```yaml
+Type: String
+Parameter Sets: Ns
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Port
+Specifies the port for a service (SRV) record.
+
+```yaml
+Type: UInt16
+Parameter Sets: Srv
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Preference
+Specifies the preference for an MX record.
+
+```yaml
+Type: UInt16
+Parameter Sets: Mx
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Priority
+Specifies the priority for an SRV record.
+
+```yaml
+Type: UInt16
+Parameter Sets: Srv
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Ptrdname
+Specifies the target domain name of a pointer resource (PTR) record.
+
+```yaml
+Type: String
+Parameter Sets: Ptr
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Target
+Specifies the target for an SRV record.
+
+```yaml
+Type: String
+Parameter Sets: Srv
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Value
+Specifies the value for a TXT record.
+
+```yaml
+Type: String
+Parameter Sets: Txt
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Weight
+Specifies the weight for an SRV record.
+
+```yaml
+Type: UInt16
+Parameter Sets: Srv
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

@@ -26,6 +26,12 @@ Get-AzureRmContainerRegistryCredential -Registry <PSContainerRegistry>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
+### ResourceIdParameterSet
+```
+Get-AzureRmContainerRegistryCredential -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
 The Get-AzureRmContainerRegistryCredential cmdlet gets the login credentials for a container registry.
 
@@ -49,7 +55,7 @@ Admin user has to be enabled for the container registry \`MyRegistry\` to get lo
 Container Registry Name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: NameResourceGroupParameterSet
 Aliases: ContainerRegistryName, RegistryName, ResourceName
 
@@ -64,14 +70,14 @@ Accept wildcard characters: False
 Container Registry Object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ContainerRegistry.PSContainerRegistry
+Type: PSContainerRegistry
 Parameter Sets: RegistryObjectParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -79,9 +85,9 @@ Accept wildcard characters: False
 Resource Group Name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: NameResourceGroupParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -94,7 +100,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
 
@@ -102,6 +108,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+The container registry resource id
+
+```yaml
+Type: String
+Parameter Sets: ResourceIdParameterSet
+Aliases: Id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

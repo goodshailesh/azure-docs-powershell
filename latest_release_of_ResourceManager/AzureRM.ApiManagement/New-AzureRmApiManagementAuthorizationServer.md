@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
-Module Name: AzureRM.ApiManagement
 ms.assetid: 45B96AB0-ACE3-4754-B162-88027AC8CA41
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/new-azurermapimanagementauthorizationserver
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/New-AzureRmApiManagementAuthorizationServer.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/New-AzureRmApiManagementAuthorizationServer.md
 ---
 
 # New-AzureRmApiManagementAuthorizationServer
@@ -47,9 +44,9 @@ Specifies an array of methods to send an access token.
 psdx_paramvalues AuthorizationHeader and Query.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementAccessTokenSendingMethod[]
+Type: PsApiManagementAccessTokenSendingMethod[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: AuthorizationHeader, Query
 
 Required: True
@@ -63,9 +60,9 @@ Accept wildcard characters: False
 Specifies the authorization endpoint to authenticate resource owners and obtain authorization grants.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -80,9 +77,9 @@ Valid values are: GET, POST.
 The default value is GET.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementAuthorizationRequestMethod[]
+Type: PsApiManagementAuthorizationRequestMethod[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Get, Post
 
 Required: False
@@ -97,9 +94,9 @@ Specifies an array of client authentication methods.
 psdx_paramvalues Basic and Body.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementClientAuthenticationMethod[]
+Type: PsApiManagementClientAuthenticationMethod[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Basic, Body
 
 Required: True
@@ -113,9 +110,9 @@ Accept wildcard characters: False
 Specifies the client ID of the developer console that is the client application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -128,9 +125,9 @@ Accept wildcard characters: False
 Specifies the client registration endpoint to register clients with the authorization server and obtain client credentials.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -143,9 +140,9 @@ Accept wildcard characters: False
 Specifies the client secret of developer console that is the client application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -158,9 +155,9 @@ Accept wildcard characters: False
 Specifies a **PsApiManagementContext** object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Type: PsApiManagementContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -169,13 +166,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DefaultScope
 Specifies the default scope for the authorization server.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -188,9 +200,9 @@ Accept wildcard characters: False
 Specifies a description for an authorization server.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -209,9 +221,9 @@ psdx_paramvalues
 - ResourceOwnerPassword
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementGrantType[]
+Type: PsApiManagementGrantType[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: AuthorizationCode, Implicit, ResourceOwnerPassword, ClientCredentials
 
 Required: True
@@ -225,9 +237,9 @@ Accept wildcard characters: False
 Specifies the name of the authorization server to create.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -241,9 +253,9 @@ Specifies the resource owner password.
 You must specify this parameter is required if ResourceOwnerPassword is specified by the *GrantTypes* parameter.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -257,9 +269,9 @@ Specifies the resource owner user name.
 You must specify this parameter if ResourceOwnerPassword is specified by the *GrantTypes* parameter.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -272,9 +284,9 @@ Accept wildcard characters: False
 Specifies the ID of the authorization server to create.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -287,9 +299,9 @@ Accept wildcard characters: False
 Indicates whether to support the *State* parameter.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: Boolean
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -302,9 +314,9 @@ Accept wildcard characters: False
 Specifies additional body parameters using **application/x-www-form-urlencoded** format.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -317,9 +329,9 @@ Accept wildcard characters: False
 Specifies the token endpoint URL that is used by clients to obtain access tokens in exchange for presenting authorization grants or refresh tokens.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -328,25 +340,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
- 
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 
@@ -355,3 +355,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

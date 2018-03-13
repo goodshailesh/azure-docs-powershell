@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataFactories.dll-Help.xml
 Module Name: AzureRM.DataFactories
 ms.assetid: 5BF24BC2-DEB6-4830-BDEA-841BAB070388
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactories/new-azurermdatafactoryencryptvalue
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/New-AzureRmDataFactoryEncryptValue.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/New-AzureRmDataFactoryEncryptValue.md
 ---
 
 # New-AzureRmDataFactoryEncryptValue
@@ -110,9 +108,9 @@ The acceptable values for this parameter are:
 - Anonymous.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Windows, Basic, Anonymous
 
 Required: False
@@ -127,9 +125,9 @@ Specifies the Windows authentication credentials (user name and password) to be 
 This cmdlet encrypts the credential data you specify here.
 
 ```yaml
-Type: System.Management.Automation.PSCredential
+Type: PSCredential
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -142,9 +140,9 @@ Accept wildcard characters: False
 Specifies the database name of the linked service.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 8
@@ -158,9 +156,9 @@ Specifies a **PSDataFactory** object.
 This cmdlet encrypts data for the data factory that this parameter specifies.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Type: PSDataFactory
 Parameter Sets: ByFactoryObject
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -174,9 +172,9 @@ Specifies the name of a data factory.
 This cmdlet encrypts data for the data factory that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -185,14 +183,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GatewayName
 Specifies the name of the gateway.
 This cmdlet encrypts data for the gateway that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -206,9 +219,9 @@ Specifies the non-credential part of the Open Database Connectivity (ODBC) conne
 This parameter is applicable only for the ODBC linked service.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -222,9 +235,9 @@ Specifies the name of an Azure resource group.
 This cmdlet encrypts data for the group that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -237,9 +250,9 @@ Accept wildcard characters: False
 Specifies the server name of the linked service.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 7
@@ -264,9 +277,9 @@ The acceptable values for this parameter are:
 - OnPremisesSybaseLinkedService
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: OnPremisesSqlLinkedService, OnPremisesFileSystemLinkedService, OnPremisesOracleLinkedService, OnPremisesOdbcLinkedService, OnPremisesPostgreSqlLinkedService, OnPremisesTeradataLinkedService, OnPremisesMySQLLinkedService, OnPremisesDB2LinkedService, OnPremisesSybaseLinkedService, HdfsLinkedService
 
 Required: False
@@ -283,27 +296,12 @@ For an on-premises ODBC linked service, use the credential part of the connectio
 For on premises file system linked service, if the file system is local to the gateway computer, use Local or localhost, and if the file system is on a server different from the gateway computer, use \\\\servername.
 
 ```yaml
-Type: System.Security.SecureString
+Type: SecureString
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -313,6 +311,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

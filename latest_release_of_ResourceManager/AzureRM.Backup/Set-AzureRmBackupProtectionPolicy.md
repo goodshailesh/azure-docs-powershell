@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.AzureBackup.dll-Help.xml
 Module Name: AzureRM.Backup
 ms.assetid: 3BF6DB10-6020-4324-A177-F07BB52AF040
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/set-azurermbackupprotectionpolicy
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Set-AzureRmBackupProtectionPolicy.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Set-AzureRmBackupProtectionPolicy.md
 ---
 
 # Set-AzureRmBackupProtectionPolicy
@@ -62,9 +60,9 @@ To obtain a **DateTime** object, use the Get-Date cmdlet.
 For information about **DateTime** objects, type `Get-Help Get-Date`.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -77,9 +75,9 @@ Accept wildcard characters: False
 Indicates that the backup operation runs on a Daily schedule.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: DailyScheduleParamSet
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -102,13 +100,28 @@ The acceptable values for this parameter are:
 - Sunday
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: WeeklyScheduleParamSet
-Aliases:
+Aliases: 
 Accepted values: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
 
 Required: False
 Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -119,9 +132,9 @@ Specifies the new name for the policy.
 This name must be unique in a vault.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -135,9 +148,9 @@ Specifies protection policy that this cmdlet modifies.
 To obtain an **AzureRmBackupProtectionPolicy** object, use the Get-AzureRmBackupProtectionPolicy cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupProtectionPolicy
+Type: AzureRMBackupProtectionPolicy
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -151,9 +164,9 @@ Specifies an array of retention policies for the backup policy.
 To obtain **AzureRmBackupRetentionPolicy** objects, use the New-AzureRmBackupRetentionPolicyObject cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupRetentionPolicy[]
+Type: AzureRMBackupRetentionPolicy[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -166,27 +179,12 @@ Accept wildcard characters: False
 Indicates that the backup operation runs on a Weekly schedule.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WeeklyScheduleParamSet
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

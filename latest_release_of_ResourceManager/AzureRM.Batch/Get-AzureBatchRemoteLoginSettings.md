@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: 07811B64-6A77-452C-B148-DE8C13E73DEF
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/get-azurebatchremoteloginsettings
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchRemoteLoginSettings.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchRemoteLoginSettings.md
 ---
 
 # Get-AzureBatchRemoteLoginSettings
@@ -70,9 +68,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 To obtain a **BatchAccountContext** that contains access keys for your subscription, use the Get-AzureRmBatchAccountKeys cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -86,9 +84,9 @@ Specifies a compute node, as a **PSComputeNode** object, for which this cmdlet g
 To obtain a compute node object, use the Get-AzureBatchComputeNode cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSComputeNode
+Type: PSComputeNode
 Parameter Sets: InputObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -102,27 +100,12 @@ Specifies the ID of the compute node for which to get the remote logon settings.
 for which this cmdlet gets remote logon settings.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PoolId
-Specifies the ID of the pool that contains the virtual machine.
-
-```yaml
-Type: System.String
-Parameter Sets: Id
-Aliases:
-
-Required: True
-Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -132,12 +115,27 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PoolId
+Specifies the ID of the pool that contains the virtual machine.
+
+```yaml
+Type: String
+Parameter Sets: Id
+Aliases: 
+
+Required: True
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: 4B5FE41A-090B-4859-B021-05CF0A8B7882
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/get-azurebatchtask
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchTask.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchTask.md
 ---
 
 # Get-AzureBatchTask
@@ -121,9 +119,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -132,14 +130,29 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Expand
 Specifies an OData expand clause.
 Specify a value for this parameter to get associated entities of the main entity to get.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -153,9 +166,9 @@ Specifies an OData filter clause for tasks.
 If you do not specify a filter, this cmdlet returns all tasks for the Batch account or job.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ODataFilter, ParentObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -169,9 +182,9 @@ Specifies the ID of the task that this cmdlet gets.
 You cannot specify wildcard characters.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -185,9 +198,9 @@ Specifies the job that contains tasks that this cmdlet gets.
 To obtain a **PSCloudJob** object, use the Get-AzureBatchJob cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSCloudJob
+Type: PSCloudJob
 Parameter Sets: ParentObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -200,9 +213,9 @@ Accept wildcard characters: False
 Specifies the ID of the job that contains the tasks that this cmdlet gets.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ODataFilter, Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -217,9 +230,9 @@ If you specify a value of zero (0) or less, the cmdlet does not use an upper lim
 The default value is 1000.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: ODataFilter, ParentObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -233,24 +246,9 @@ Specifies an OData select clause.
 Specify a value for this parameter to get specific properties rather than all object properties.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: 
 
 Required: False
 Position: Named

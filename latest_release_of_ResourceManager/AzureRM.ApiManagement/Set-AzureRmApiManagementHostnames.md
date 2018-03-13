@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: F9CE8705-F7B1-45AB-98BC-FC6DC023D38D
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/set-azurermapimanagementhostnames
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Set-AzureRmApiManagementHostnames.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Set-AzureRmApiManagementHostnames.md
 ---
 
 # Set-AzureRmApiManagementHostnames
@@ -15,7 +13,7 @@ Sets a custom hostname configuration for an API Management service proxy or port
 
 ## SYNTAX
 
-### Specific API Management service (Default)
+### SetSpecificService (Default)
 ```
 Set-AzureRmApiManagementHostnames -ResourceGroupName <String> -Name <String>
  [-PortalHostnameConfiguration <PsApiManagementHostnameConfiguration>]
@@ -23,7 +21,7 @@ Set-AzureRmApiManagementHostnames -ResourceGroupName <String> -Name <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Set from provided PsApiManagement instance
+### SetFromPsApiManagementInstance
 ```
 Set-AzureRmApiManagementHostnames -ApiManagement <PsApiManagement> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -59,9 +57,9 @@ You need to import corresponding certificates and then apply the custom hostname
 Specifies the **PsApiManagement** instance that this cmdlet gets the *PortalHostnameConfiguration* and *ProxyHostnameConfiguration* parameters from.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
-Parameter Sets: Set from provided PsApiManagement instance
-Aliases:
+Type: PsApiManagement
+Parameter Sets: SetFromPsApiManagementInstance
+Aliases: 
 
 Required: True
 Position: Named
@@ -70,13 +68,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the name of the API Management instance.
 
 ```yaml
-Type: System.String
-Parameter Sets: Specific API Management service
-Aliases:
+Type: String
+Parameter Sets: SetSpecificService
+Aliases: 
 
 Required: True
 Position: Named
@@ -90,9 +103,9 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -106,9 +119,9 @@ Specifies the custom portal hostname configuration.
 Passing $null to the cmdlet sets the default hostname.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementHostnameConfiguration
-Parameter Sets: Specific API Management service
-Aliases:
+Type: PsApiManagementHostnameConfiguration
+Parameter Sets: SetSpecificService
+Aliases: 
 
 Required: False
 Position: Named
@@ -122,9 +135,9 @@ Specifies the custom proxy hostname configuration.
 Passing $null sets the default hostname.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementHostnameConfiguration
-Parameter Sets: Specific API Management service
-Aliases:
+Type: PsApiManagementHostnameConfiguration
+Parameter Sets: SetSpecificService
+Aliases: 
 
 Required: False
 Position: Named
@@ -137,29 +150,14 @@ Accept wildcard characters: False
 Specifies the name of the resource group under which the API Management instance exists.
 
 ```yaml
-Type: System.String
-Parameter Sets: Specific API Management service
-Aliases:
+Type: String
+Parameter Sets: SetSpecificService
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
- 
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

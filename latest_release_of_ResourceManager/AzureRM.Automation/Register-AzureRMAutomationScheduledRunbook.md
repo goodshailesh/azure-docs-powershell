@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ResourceManager.Automation.dll-Help.xml
 Module Name: AzureRM.Automation
 ms.assetid: F79AFF9A-CEDA-4E57-B5DB-9D0A7CDA6D27
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.automation/register-azurermautomationscheduledrunbook
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Register-AzureRMAutomationScheduledRunbook.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Register-AzureRMAutomationScheduledRunbook.md
 ---
 
 # Register-AzureRmAutomationScheduledRunbook
@@ -47,14 +45,29 @@ This command associates the runbook named Runbk01 with the schedule named Sched0
 Specifies an Automation account for the runbook on which this cmdlet operates.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -65,9 +78,9 @@ The values are runbook parameter values.
 When the runbook starts in response to the associated schedule, these parameters are passed to the runbook.
 
 ```yaml
-Type: System.Collections.IDictionary
+Type: IDictionary
 Parameter Sets: ByRunbookNameAndScheduleName
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -80,9 +93,9 @@ Accept wildcard characters: False
 Specifies the name of a resource group for the scheduled runbook.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -95,7 +108,7 @@ Accept wildcard characters: False
 Specifies the name of the runbook that this cmdlet associates to a schedule.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByRunbookNameAndScheduleName
 Aliases: Name
 
@@ -110,7 +123,7 @@ Accept wildcard characters: False
 The name of the hybrid runbook worker group.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByRunbookNameAndScheduleName
 Aliases: HybridWorker
 
@@ -125,9 +138,9 @@ Accept wildcard characters: False
 Specifies the name of the schedule to which this cmdlet associates a runbook.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByRunbookNameAndScheduleName
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -136,25 +149,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

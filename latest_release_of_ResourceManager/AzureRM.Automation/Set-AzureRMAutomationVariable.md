@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ResourceManager.Automation.dll-Help.xml
 Module Name: AzureRM.Automation
 ms.assetid: F344D8D1-5593-4C09-A1CA-37579D2A3A61
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.automation/set-azurermautomationvariable
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Set-AzureRMAutomationVariable.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/Set-AzureRMAutomationVariable.md
 ---
 
 # Set-AzureRmAutomationVariable
@@ -49,9 +47,9 @@ This command sets a new value for the variable named StringVariable22 in the Azu
 Specifies the name of the Automation account in which the variable is stored.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -60,13 +58,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
 Specifies a description for the variable.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateVariableDescription
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -79,9 +92,9 @@ Accept wildcard characters: False
 Specifies whether cmdlet encrypts the value of the variable for storage.
 
 ```yaml
-Type: System.Boolean
+Type: Boolean
 Parameter Sets: UpdateVariableValue
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -94,9 +107,9 @@ Accept wildcard characters: False
 Specifies the name of the variable that this cmdlet modifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
@@ -109,9 +122,9 @@ Accept wildcard characters: False
 Specifies the resource group for which this cmdlet modifies a variable.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -124,9 +137,9 @@ Accept wildcard characters: False
 Specifies a value for the variable.
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: UpdateVariableValue
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -135,25 +148,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

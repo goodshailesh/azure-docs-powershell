@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 91B2DE2F-442D-4428-8A6F-9C2CEC181CA7
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVMSourceImage.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVMSourceImage.md
 ---
 
 # Set-AzureRmVMSourceImage
@@ -18,13 +15,12 @@ Specifies the image for a virtual machine.
 ### ImageReferenceSkuParameterSet (Default)
 ```
 Set-AzureRmVMSourceImage [-VM] <PSVirtualMachine> [-PublisherName] <String> [-Offer] <String> [-Skus] <String>
- [-Version] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Version] <String> [<CommonParameters>]
 ```
 
 ### ImageReferenceIdParameterSet
 ```
-Set-AzureRmVMSourceImage [-VM] <PSVirtualMachine> [-Id] <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Set-AzureRmVMSourceImage [-VM] <PSVirtualMachine> [-Id] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +30,7 @@ The **Set-AzureRmVMSourceImage** cmdlet specifies the platform image to use for 
 
 ### Example 1: Set values for an image
 ```
-PS C:\> AvailabilitySet = Get-AzureRmAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
+PS C:\> $AvailabilitySet = Get-AzureRmAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
 PS C:\> $VirtualMachine = New-AzureRmVMConfig -VMName "VirtualMachine07" -VMSize "Standard_A1" -AvailabilitySetID $AvailabilitySet.Id 
 PS C:\> Set-AzureRmVMSourceImage -VM $VirtualMachine -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2012-R2-Datacenter" -Version "latest"
 ```
@@ -54,9 +50,9 @@ The **Get-AzureRmVMImagePublisher**, **Get-AzureRmVMImageOffer**, **Get-AzureRmV
 Specifies the ID.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ImageReferenceIdParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -70,9 +66,9 @@ Specifies the type of VMImage offer.
 To obtain an image offer, use the Get-AzureRmVMImageOffer cmdlet.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ImageReferenceSkuParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
@@ -86,9 +82,9 @@ Specifies the name of a publisher of a VMImage.
 To obtain a publisher, use the Get-AzureRmVMImagePublisher cmdlet.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ImageReferenceSkuParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -102,9 +98,9 @@ Specifies a VMImage SKU.
 To obtain SKUs, use the Get-AzureRmVMImageSku cmdlet.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ImageReferenceSkuParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 3
@@ -118,9 +114,9 @@ Specifies a version of a VMImage.
 To use the latest version, specify a value of latest instead of a particular version.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ImageReferenceSkuParameterSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 4
@@ -133,7 +129,7 @@ Accept wildcard characters: False
 Specifies the local virtual machine object to configure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Type: PSVirtualMachine
 Parameter Sets: (All)
 Aliases: VMProfile
 
@@ -144,23 +140,13 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

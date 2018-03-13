@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataFactories.dll-Help.xml
 Module Name: AzureRM.DataFactories
 ms.assetid: D853A91F-95E7-4C36-AC0F-2C10DFCF68F8
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactories/set-azurermdatafactorypipelineactiveperiod
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Set-AzureRmDataFactoryPipelineActivePeriod.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Set-AzureRmDataFactoryPipelineActivePeriod.md
 ---
 
 # Set-AzureRmDataFactoryPipelineActivePeriod
@@ -59,9 +57,9 @@ The command returns a value of $True.
 Indicates that this cmdlet uses auto resolve.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -75,9 +73,9 @@ Specifies a **PSDataFactory** object.
 This cmdlet modifies the active period for a pipeline that belongs to the data factory that this parameter specifies.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Type: PSDataFactory
 Parameter Sets: ByFactoryObject
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -91,14 +89,29 @@ Specifies the name of a data factory.
 This cmdlet modifies the active period for a pipeline that belongs to the data factory that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -117,9 +130,9 @@ For more information about **DateTime** objects, type `Get-Help Get-Date`.
 The default time zone designator is UTC.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -132,9 +145,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses force recalculate.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -148,7 +161,7 @@ Specifies the name of the pipeline.
 This cmdlet sets the active period for the pipeline that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: Name
 
@@ -164,9 +177,9 @@ Specifies the name of an Azure resource group.
 This cmdlet modifies the active period for a pipeline that belongs to the group that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -182,9 +195,9 @@ Data processing occurs or data slices are processed within this period.
 *StartDateTime* must be specified in the ISO8601 format.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 3
@@ -197,7 +210,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -213,7 +226,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -224,25 +237,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

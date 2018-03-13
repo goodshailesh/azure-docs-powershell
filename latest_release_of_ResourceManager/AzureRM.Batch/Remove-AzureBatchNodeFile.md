@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: DBA02017-8372-4A91-A4F1-985777DEDAB9
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/remove-azurebatchnodefile
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Remove-AzureBatchNodeFile.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Remove-AzureBatchNodeFile.md
 ---
 
 # Remove-AzureBatchNodeFile
@@ -17,14 +15,14 @@ Deletes a node file for a task or compute node.
 
 ### Task
 ```
-Remove-AzureBatchNodeFile -JobId <String> -TaskId <String> -Name <String> [-Force] [-Recursive]
+Remove-AzureBatchNodeFile -JobId <String> -TaskId <String> -Path <String> [-Force] [-Recursive]
  -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### ComputeNode
 ```
-Remove-AzureBatchNodeFile [-PoolId] <String> [-ComputeNodeId] <String> -Name <String> [-Force] [-Recursive]
+Remove-AzureBatchNodeFile [-PoolId] <String> [-ComputeNodeId] <String> -Path <String> [-Force] [-Recursive]
  -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -75,9 +73,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -90,9 +88,9 @@ Accept wildcard characters: False
 Specifies the ID of the compute node that contains the Batch node file that this cmdlet deletes.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ComputeNode
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -101,13 +99,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -121,9 +134,9 @@ Specifies **PSNodeFile** object that represent the node file that this cmdlet de
 To obtain a **PSNodeFile**, use the Get-AzureBatchNodeFile cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSNodeFile
+Type: PSNodeFile
 Parameter Sets: InputObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -136,9 +149,9 @@ Accept wildcard characters: False
 Specifies the ID of the job that contains the task.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Task
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -147,11 +160,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name
-Specifies the name of the node file that this cmdlet deletes.```yaml
-Type: System.String
+### -Path
+The file path of the node file to delete.
+
+```yaml
+Type: String
 Parameter Sets: Task, ComputeNode
-Aliases:
+Aliases: Name
 
 Required: True
 Position: Named
@@ -164,9 +179,9 @@ Accept wildcard characters: False
 Specifies the ID of the pool that contains the compute nodes for which this cmdlet removes a file.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ComputeNode
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -180,9 +195,9 @@ Indicates that this cmdlet deletes the folder and all subfolders and files under
 This cmdlet is relevant only if the path is a folder.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -195,9 +210,9 @@ Accept wildcard characters: False
 Specifies the ID of the task.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Task
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -210,7 +225,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -226,28 +241,13 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

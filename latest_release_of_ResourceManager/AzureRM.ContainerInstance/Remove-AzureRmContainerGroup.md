@@ -81,7 +81,7 @@ The container group to remove.
 ```yaml
 Type: PSContainerGroup
 Parameter Sets: RemoveContainerGroupByPSContainerGroupParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -96,7 +96,7 @@ The container group name.
 ```yaml
 Type: String
 Parameter Sets: RemoveContainerGroupByResourceGroupAndNameParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -126,7 +126,7 @@ The resource group name.
 ```yaml
 Type: String
 Parameter Sets: RemoveContainerGroupByResourceGroupAndNameParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -141,7 +141,7 @@ The resource id.
 ```yaml
 Type: String
 Parameter Sets: RemoveContainerGroupByResourceIdParamSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -196,4 +196,3 @@ Microsoft.Azure.Commands.ContainerInstance.Models.PSContainerGroup
 ## NOTES
 
 ## RELATED LINKS
-

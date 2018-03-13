@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataLakeStore.dll-Help.xml
 Module Name: AzureRM.DataLakeStore
 ms.assetid: 0671D833-8B3A-4480-A576-92F1A9E8CE92
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datalakestore/set-azurermdatalakestoreitemaclentry
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeStore/Commands.DataLakeStore/help/Set-AzureRmDataLakeStoreItemAclEntry.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeStore/Commands.DataLakeStore/help/Set-AzureRmDataLakeStoreItemAclEntry.md
 ---
 
 # Set-AzureRmDataLakeStoreItemAclEntry
@@ -15,14 +13,14 @@ Modifies an entry in the ACL of a file or folder in Data Lake Store.
 
 ## SYNTAX
 
-### Set ACL Entries using ACL object (Default)
+### SetByACLObject (Default)
 ```
 Set-AzureRmDataLakeStoreItemAclEntry [-Account] <String> [-Path] <DataLakeStorePathInstance>
  [-Acl] <DataLakeStoreItemAce[]> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Set specific ACE
+### SetSpecificACE
 ```
 Set-AzureRmDataLakeStoreItemAclEntry [-Account] <String> [-Path] <DataLakeStorePathInstance>
  [-AceType] <AceType> [[-Id] <Guid>] [-Permissions] <Permission> [-Default] [-PassThru]
@@ -47,7 +45,7 @@ This command modifies the ACE for Patti Fuller to have all permissions.
 Specifies the name of the Data Lake Store account.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: AccountName
 
@@ -68,9 +66,9 @@ The acceptable values for this parameter are:
 - Other
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataLakeStore.Models.DataLakeStoreEnums+AceType
-Parameter Sets: Set specific ACE
-Aliases:
+Type: AceType
+Parameter Sets: SetSpecificACE
+Aliases: 
 Accepted values: User, Group, Mask, Other
 
 Required: True
@@ -84,9 +82,9 @@ Accept wildcard characters: False
 Specifies the ACL object that contains the entries to modify.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataLakeStore.Models.DataLakeStoreItemAce[]
-Parameter Sets: Set ACL Entries using ACL object
-Aliases:
+Type: DataLakeStoreItemAce[]
+Parameter Sets: SetByACLObject
+Aliases: 
 
 Required: True
 Position: 2
@@ -99,9 +97,9 @@ Accept wildcard characters: False
 Indicates that this operation modifies the default ACE from the specified ACL.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Set specific ACE
-Aliases:
+Type: SwitchParameter
+Parameter Sets: SetSpecificACE
+Aliases: 
 
 Required: False
 Position: 4
@@ -110,13 +108,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Specifies the object ID of the AzureActive Directory user, group, or service principal for which to modify an ACE.
 
 ```yaml
-Type: System.Guid
-Parameter Sets: Set specific ACE
-Aliases:
+Type: Guid
+Parameter Sets: SetSpecificACE
+Aliases: 
 
 Required: False
 Position: 3
@@ -129,9 +142,9 @@ Accept wildcard characters: False
 Indicates the resulting ACL should be returned.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -144,9 +157,9 @@ Accept wildcard characters: False
 Specifies the Data Lake Store path of the item for which to modify an ACE, starting with the root directory (/).
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataLakeStore.Models.DataLakeStorePathInstance
+Type: DataLakeStorePathInstance
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -169,9 +182,9 @@ The acceptable values for this parameter are:
 - All
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataLakeStore.Models.DataLakeStoreEnums+Permission
-Parameter Sets: Set specific ACE
-Aliases:
+Type: Permission
+Parameter Sets: SetSpecificACE
+Aliases: 
 
 Required: True
 Position: 4
@@ -184,7 +197,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -200,28 +213,13 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

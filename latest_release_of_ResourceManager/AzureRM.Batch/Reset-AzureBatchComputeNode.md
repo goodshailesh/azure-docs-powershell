@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
 Module Name: AzureRM.Batch
 ms.assetid: A202537B-D292-4822-A0B9-27A6A20621D4
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.batch/reset-azurebatchcomputenode
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Reset-AzureBatchComputeNode.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Reset-AzureBatchComputeNode.md
 ---
 
 # Reset-AzureBatchComputeNode
@@ -54,9 +52,9 @@ Specifies the **BatchAccountContext** instance that this cmdlet uses to interact
 If you use the Get-AzureRmBatchAccount cmdlet to get your BatchAccountContext, then Azure Active Directory authentication will be used when interacting with the Batch service. To use shared key authentication instead, use the Get-AzureRmBatchAccountKeys cmdlet to get a BatchAccountContext object with its access keys populated. When using shared key authentication, the primary access key is used by default. To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Type: BatchAccountContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -69,9 +67,9 @@ Accept wildcard characters: False
 Specifies the **PSComputeNode** object that represents the compute node to reimage.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Batch.Models.PSComputeNode
+Type: PSComputeNode
 Parameter Sets: InputObject
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -80,13 +78,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Specifies the ID of the compute node to reimage.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -99,9 +112,9 @@ Accept wildcard characters: False
 Specifies the ID of the pool that contains the compute node.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Id
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -115,25 +128,10 @@ Specifies when to reimage the node and what to do with currently running tasks.
 The default is Requeue.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Batch.Common.ComputeNodeReimageOption]
+Type: ComputeNodeReimageOption
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Requeue, Terminate, TaskCompletion, RetainedData
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named

@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: C453485D-67A7-480E-83F6-527D4F5EBC93
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRMVMDataDisk.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRMVMDataDisk.md
 ---
 
 # Set-AzureRmVMDataDisk
@@ -18,13 +15,13 @@ Modifies properties of a virtual machine data disk.
 ### ChangeWithName
 ```
 Set-AzureRmVMDataDisk [-VM] <PSVirtualMachine> [-Name] <String> [[-Caching] <CachingTypes>]
- [[-DiskSizeInGB] <Int32>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [[-DiskSizeInGB] <Int32>] [<CommonParameters>]
 ```
 
 ### ChangeWithLun
 ```
 Set-AzureRmVMDataDisk [-VM] <PSVirtualMachine> [-Lun] <Int32> [[-Caching] <CachingTypes>]
- [[-DiskSizeInGB] <Int32>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [[-DiskSizeInGB] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,9 +57,9 @@ Changing this value causes the virtual machine to restart.
 This setting affects the consistency and performance of the disk.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.CachingTypes]
+Type: CachingTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: None, ReadOnly, ReadWrite
 
 Required: False
@@ -76,9 +73,9 @@ Accept wildcard characters: False
 Specifies the size, in gigabytes, for the data disk.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -91,9 +88,9 @@ Accept wildcard characters: False
 Specifies the logical unit number (LUN) of the data disk that this cmdlet modifies.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Int32
 Parameter Sets: ChangeWithLun
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -106,9 +103,9 @@ Accept wildcard characters: False
 Specifies the name of the data disk that this cmdlet modifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ChangeWithName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -122,7 +119,7 @@ Specifies the virtual machine for which this cmdlet modifies a data disk.
 To obtain a virtual machine object, use the Get-AzureRmVM cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Type: PSVirtualMachine
 Parameter Sets: (All)
 Aliases: VMProfile
 
@@ -133,23 +130,13 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

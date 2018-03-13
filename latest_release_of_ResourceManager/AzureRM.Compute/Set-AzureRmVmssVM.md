@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 70AA9747-232E-40F2-845C-35A779F51CD2
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVmssVM.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVmssVM.md
 ---
 
 # Set-AzureRmVmssVM
@@ -15,16 +12,16 @@ Modifies the state of a VMSS instance.
 
 ## SYNTAX
 
-### InvokeByDynamicParameters (Default)
+### DefaultParameter (Default)
 ```
-Set-AzureRmVmssVM [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-ResourceGroupName] <String>
- [-VMScaleSetName] <String> [-InstanceId] <String> [-Reimage] [<CommonParameters>]
+Set-AzureRmVmssVM [-ResourceGroupName] <String> [-VMScaleSetName] <String> [-InstanceId] <String> [-Reimage]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### InvokeByDynamicParametersForFriendMethod
+### FriendMethod
 ```
-Set-AzureRmVmssVM [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-ResourceGroupName] <String>
- [-VMScaleSetName] <String> [-InstanceId] <String> [-ReimageAll] [<CommonParameters>]
+Set-AzureRmVmssVM [-ResourceGroupName] <String> [-VMScaleSetName] <String> [-InstanceId] <String> [-ReimageAll]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,9 +35,9 @@ The **Set-AzureRmVmssVM** cmdlet modifies the state of a Virtual Machine Scale S
 Specifies the ID of the VMSS instance for which this cmdlet modifies state.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 3
@@ -53,9 +50,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet reimages the VMSS instance.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InvokeByDynamicParameters
-Aliases:
+Type: SwitchParameter
+Parameter Sets: DefaultParameter
+Aliases: 
 
 Required: True
 Position: 4
@@ -68,9 +65,9 @@ Accept wildcard characters: False
 Indicates that the cmdlet reimages all the disks in the VMSS instance.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InvokeByDynamicParametersForFriendMethod
-Aliases:
+Type: SwitchParameter
+Parameter Sets: FriendMethod
+Aliases: 
 
 Required: True
 Position: 4
@@ -83,9 +80,9 @@ Accept wildcard characters: False
 Specifies the name of the resource group that contains the VMSS instance.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -98,7 +95,7 @@ Accept wildcard characters: False
 Specifies the name of the VMSS instance that this cmdlet modifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: Name
 
@@ -113,7 +110,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -128,22 +125,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -156,6 +140,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

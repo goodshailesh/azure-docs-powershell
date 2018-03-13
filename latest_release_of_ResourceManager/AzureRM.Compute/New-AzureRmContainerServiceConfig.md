@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: EC8C915A-A0BC-41DE-9DBF-3617536E3D1A
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/New-AzureRmContainerServiceConfig.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/New-AzureRmContainerServiceConfig.md
 ---
 
 # New-AzureRmContainerServiceConfig
@@ -17,13 +14,12 @@ Creates a local configuration object for a container service.
 
 ```
 New-AzureRmContainerServiceConfig [[-Location] <String>] [[-Tag] <Hashtable>]
- [[-OrchestratorType] <ContainerServiceOchestratorTypes>] [[-MasterCount] <Int32>]
+ [[-OrchestratorType] <ContainerServiceOrchestratorTypes>] [[-MasterCount] <Int32>]
  [[-MasterDnsPrefix] <String>] [[-AgentPoolProfile] <ContainerServiceAgentPoolProfile[]>]
  [[-WindowsProfileAdminUsername] <String>] [[-WindowsProfileAdminPassword] <String>]
  [[-AdminUsername] <String>] [[-SshPublicKey] <String[]>] [[-VmDiagnosticsEnabled] <Boolean>]
  [-CustomProfileOrchestrator <String>] [-ServicePrincipalProfileClientId <String>]
- [-ServicePrincipalProfileSecret <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ServicePrincipalProfileSecret <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,9 +47,9 @@ Specify the object in $Container for the *ContainerService* parameter of **New-A
 Specifies the administrator account name to use for a Linux-based container service.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 8
@@ -67,9 +63,9 @@ Specifies an array of agent pool profile objects for the container service.
 Add a profile by using the Add-AzureRmContainerServiceAgentPoolProfile cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.ContainerServiceAgentPoolProfile[]
+Type: ContainerServiceAgentPoolProfile[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -82,9 +78,9 @@ Accept wildcard characters: False
 Specifies the custom profile orchestrator.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -97,9 +93,9 @@ Accept wildcard characters: False
 Specifies the location in which to create the container service.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -112,9 +108,9 @@ Accept wildcard characters: False
 Specifies the number of master virtual machines to create.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -127,9 +123,9 @@ Accept wildcard characters: False
 Specifies the DNS prefix for the master virtual machine.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -143,9 +139,9 @@ Specifies the type of orchestrator for the container service.
 The acceptable values for this parameter are: DCOS and Swarm.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.ContainerServiceOchestratorTypes]
+Type: ContainerServiceOrchestratorTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Swarm, DCOS, Custom, Kubernetes
 
 Required: False
@@ -159,9 +155,9 @@ Accept wildcard characters: False
 Specifies the principal profile client ID.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -174,9 +170,9 @@ Accept wildcard characters: False
 Specifies the principal profile secret.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -189,9 +185,9 @@ Accept wildcard characters: False
 Specifies the SSH public key for a Linux-based container service.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 9
@@ -204,9 +200,9 @@ Accept wildcard characters: False
 Specifies tags for the container service.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -219,9 +215,9 @@ Accept wildcard characters: False
 Indicates whether this configuration enables diagnostics for the container service virtual machine.
 
 ```yaml
-Type: System.Boolean
+Type: Boolean
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 10
@@ -234,9 +230,9 @@ Accept wildcard characters: False
 Specifies the administrator password for a container service that uses the Windows operating system.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 7
@@ -249,9 +245,9 @@ Accept wildcard characters: False
 Specifies the administrator username for a container service that uses the Windows operating system.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 6
@@ -264,7 +260,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -279,22 +275,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -307,6 +290,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

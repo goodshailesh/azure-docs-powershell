@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataLakeStore.dll-Help.xml
 Module Name: AzureRM.DataLakeStore
 ms.assetid: 0EB5C25C-D0A1-4444-AEA2-C963D5069CFC
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datalakestore/set-azurermdatalakestoreaccount
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeStore/Commands.DataLakeStore/help/Set-AzureRmDataLakeStoreAccount.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeStore/Commands.DataLakeStore/help/Set-AzureRmDataLakeStoreAccount.md
 ---
 
 # Set-AzureRmDataLakeStoreAccount
@@ -16,10 +14,10 @@ Modifies a Data Lake Store account.
 ## SYNTAX
 
 ```
-Set-AzureRmDataLakeStoreAccount [-Name] <String> [[-DefaultGroup] <String>] [[-Tags] <Hashtable>]
+Set-AzureRmDataLakeStoreAccount [-Name] <String> [[-DefaultGroup] <String>] [[-Tag] <Hashtable>]
  [[-TrustedIdProviderState] <TrustedIdProviderState>] [[-FirewallState] <FirewallState>]
  [[-ResourceGroupName] <String>] [-Tier <TierType>] [-AllowAzureIpState <FirewallAllowAzureIpsState>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-KeyVersion <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,7 +38,7 @@ This command adds the specified tag to the Data Lake Store account named Contoso
 Optionally allow/block Azure originating IPs through the firewall.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.DataLake.Store.Models.FirewallAllowAzureIpsState]
+Type: FirewallAllowAzureIpsState
 Parameter Sets: (All)
 Aliases:
 Accepted values: Enabled, Disabled
@@ -57,7 +55,7 @@ Specifies the ID of an AzureActive Directory group.
 This group is the default group for files and folders that you create.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -68,11 +66,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FirewallState
 Optionally enable or disable existing firewall rules.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.DataLake.Store.Models.FirewallState]
+Type: FirewallState
 Parameter Sets: (All)
 Aliases:
 Accepted values: Enabled, Disabled
@@ -84,11 +97,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -KeyVersion
+If the encryption type is User assigned, the user can rotate their key version with this parameter.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the name of a Data Lake Store account.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -103,7 +131,7 @@ Accept wildcard characters: False
 Specifies the name of the resource group that contains the Data Lake Store account to modify.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -114,11 +142,14 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tags
-Specifies tags as key-value pairs. You can use tags to identify a Data Lake Store account from other Azure resources.```yaml
-Type: System.Collections.Hashtable
+### -Tag
+Specifies tags as key-value pairs.
+You can use tags to identify a Data Lake Store account from other Azure resources.
+
+```yaml
+Type: Hashtable
 Parameter Sets: (All)
-Aliases:
+Aliases: Tags
 
 Required: False
 Position: 2
@@ -131,7 +162,7 @@ Accept wildcard characters: False
 The desired commitment tier for this account to use.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.DataLake.Store.Models.TierType]
+Type: TierType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Consumption, Commitment1TB, Commitment10TB, Commitment100TB, Commitment500TB, Commitment1PB, Commitment5PB
@@ -147,7 +178,7 @@ Accept wildcard characters: False
 Optionally enable or disable the existing trusted ID providers.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.DataLake.Store.Models.TrustedIdProviderState]
+Type: TrustedIdProviderState
 Parameter Sets: (All)
 Aliases:
 
@@ -158,25 +189,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

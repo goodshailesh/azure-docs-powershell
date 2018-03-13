@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.AzureBackup.dll-Help.xml
 Module Name: AzureRM.Backup
 ms.assetid: D57C32D1-EB4F-495E-A11B-3B4066E8C552
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/set-azurermbackupvault
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Set-AzureRmBackupVault.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Set-AzureRmBackupVault.md
 ---
 
 # Set-AzureRmBackupVault
@@ -37,14 +35,29 @@ The current cmdlet changes the storage type to LocallyRedundant.
 
 ## PARAMETERS
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Storage
 Specifies the storage type for the backup data.
 The acceptable values for this parameter are: LocallyRedundant and GeoRedundant.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureBackupVaultStorageType
+Type: AzureBackupVaultStorageType
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: GeoRedundant, LocallyRedundant
 
 Required: False
@@ -59,29 +72,14 @@ Specifies a Backup vault that this cmdlet modifies.
 To obtain an **AzureRmBackupVault** object, use the Get-AzureRmBackupVault cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupVault
+Type: AzureRMBackupVault
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

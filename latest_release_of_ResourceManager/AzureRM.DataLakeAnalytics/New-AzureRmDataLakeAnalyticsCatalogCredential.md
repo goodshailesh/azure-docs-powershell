@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataLakeAnalytics.dll-Help.xml
 Module Name: AzureRM.DataLakeAnalytics
 ms.assetid: BB6AF5A9-49BD-4A76-9F3F-44B62D2AB842
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datalakeanalytics/new-azurermdatalakeanalyticscatalogcredential
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeAnalytics/Commands.DataLakeAnalytics/help/New-AzureRmDataLakeAnalyticsCatalogCredential.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataLakeAnalytics/Commands.DataLakeAnalytics/help/New-AzureRmDataLakeAnalyticsCatalogCredential.md
 ---
 
 # New-AzureRmDataLakeAnalyticsCatalogCredential
@@ -15,14 +13,14 @@ Creates a new Azure Data Lake Analytics catalog credential.
 
 ## SYNTAX
 
-### Specify host name and port (Default)
+### CreateByHostNameAndPort (Default)
 ```
 New-AzureRmDataLakeAnalyticsCatalogCredential [-Account] <String> [-DatabaseName] <String>
  [-CredentialName] <String> [-Credential] <PSCredential> [-Uri] <Uri>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Specify full URI
+### CreateByFullURI
 ```
 New-AzureRmDataLakeAnalyticsCatalogCredential [-Account] <String> [-DatabaseName] <String>
  [-CredentialName] <String> [-Credential] <PSCredential> [-DatabaseHost] <String> [-Port] <Int32>
@@ -62,7 +60,7 @@ This command creates the specified credential for the specified account, databas
 Specifies the Data Lake Analytics account name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: AccountName
 
@@ -77,9 +75,9 @@ Accept wildcard characters: False
 Specifies the user name and corresponding password of the credential.
 
 ```yaml
-Type: System.Management.Automation.PSCredential
+Type: PSCredential
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 3
@@ -92,9 +90,9 @@ Accept wildcard characters: False
 Specifies the name and password of the credential.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
@@ -107,9 +105,9 @@ Accept wildcard characters: False
 Specifies the host name of the external data source the credential can connect to in the format mydatabase.contoso.com.
 
 ```yaml
-Type: System.String
-Parameter Sets: Specify full URI
-Aliases:
+Type: String
+Parameter Sets: CreateByFullURI
+Aliases: 
 
 Required: True
 Position: 4
@@ -122,9 +120,9 @@ Accept wildcard characters: False
 Specifies the name of the database in the Data Lake Analytics acocunt that the credential will be stored in.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -133,13 +131,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Port
 Specifies the port number used to connect to the specified DatabaseHost using this credential.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: Specify full URI
-Aliases:
+Type: Int32
+Parameter Sets: CreateByFullURI
+Aliases: 
 
 Required: True
 Position: 5
@@ -152,9 +165,9 @@ Accept wildcard characters: False
 Specifies the full Uniform Resource Identifier (URI) of the external data source this credential can connect to.
 
 ```yaml
-Type: System.Uri
-Parameter Sets: Specify host name and port
-Aliases:
+Type: Uri
+Parameter Sets: CreateByHostNameAndPort
+Aliases: 
 
 Required: True
 Position: 4
@@ -167,7 +180,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -180,24 +193,9 @@ Accept wildcard characters: False
 
 ### -WhatIf
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -211,6 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
+This cmdlet does not accept any input.
+
 ## OUTPUTS
 
 ### None
@@ -218,3 +219,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

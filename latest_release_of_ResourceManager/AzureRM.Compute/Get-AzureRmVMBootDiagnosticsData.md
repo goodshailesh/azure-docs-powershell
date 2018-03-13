@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 15CAC050-F2E9-4872-88E7-516A6D194FAB
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVMBootDiagnosticsData.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVMBootDiagnosticsData.md
 ---
 
 # Get-AzureRmVMBootDiagnosticsData
@@ -18,13 +15,13 @@ Gets boot diagnostics data for a virtual machine.
 ### WindowsParamSet (Default)
 ```
 Get-AzureRmVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Windows]
- [-LocalPath] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-LocalPath] <String> [<CommonParameters>]
 ```
 
 ### LinuxParamSet
 ```
 Get-AzureRmVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Linux]
- [[-LocalPath] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [[-LocalPath] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,9 +44,9 @@ The command stores the data in specified local path.
 Indicates that the virtual machine runs the Linux operating system.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: LinuxParamSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
@@ -62,9 +59,9 @@ Accept wildcard characters: False
 Specifies the local path for the boot diagnostics data.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: WindowsParamSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 3
@@ -74,9 +71,9 @@ Accept wildcard characters: False
 ```
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: LinuxParamSet
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -89,7 +86,7 @@ Accept wildcard characters: False
 Specifies the name of the virtual machine for which this cmdlet gets diagnostics data.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: ResourceName, VMName
 
@@ -104,9 +101,9 @@ Accept wildcard characters: False
 Specifies the name of the resource group of the virtual machine.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -119,25 +116,12 @@ Accept wildcard characters: False
 Indicates that the virtual machine runs the Windows operating system.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WindowsParamSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -147,6 +131,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

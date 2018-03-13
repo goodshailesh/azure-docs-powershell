@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: AzureRM.ApiManagement
 ms.assetid: EEB52CCA-F5D6-4ACB-A6C9-D07C510A5878
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/get-azurermapimanagementgroup
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementGroup.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementGroup.md
 ---
 
 # Get-AzureRmApiManagementGroup
@@ -15,25 +13,25 @@ Gets all or specific API management groups.
 
 ## SYNTAX
 
-### Get all groups (Default)
+### GetAllGroups (Default)
 ```
 Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Get by group ID
+### GetByGroupId
 ```
 Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-GroupId <String>] [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Find groups by user
+### GetByUserId
 ```
 Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-Name <String>] [-UserId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Find groups by product
+### GetByProductId
 ```
 Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-Name <String>] [-ProductId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -82,9 +80,9 @@ This command gets all user groups with the user ID named 0123456789.
 Specifies an instance of PsApiManagementContext.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Type: PsApiManagementContext
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -93,14 +91,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure.
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GroupId
 Specifies the group ID.
 If specified, the cmdlet attempts to find the group by the identifier.
 
 ```yaml
-Type: System.String
-Parameter Sets: Get by group ID
-Aliases:
+Type: String
+Parameter Sets: GetByGroupId
+Aliases: 
 
 Required: False
 Position: Named
@@ -113,9 +126,9 @@ Accept wildcard characters: False
 Specifies the name of the management group.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -130,9 +143,9 @@ If specified will return all groups the product assigned to.
 This parameter is optional.
 
 ```yaml
-Type: System.String
-Parameter Sets: Find groups by product
-Aliases:
+Type: String
+Parameter Sets: GetByProductId
+Aliases: 
 
 Required: False
 Position: Named
@@ -146,9 +159,9 @@ Specifies the identifier of existing product.
 If specified the cmdlet will return all groups the product assigned to.
 
 ```yaml
-Type: System.String
-Parameter Sets: Find groups by user
-Aliases:
+Type: String
+Parameter Sets: GetByUserId
+Aliases: 
 
 Required: False
 Position: Named
@@ -157,25 +170,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
- 
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

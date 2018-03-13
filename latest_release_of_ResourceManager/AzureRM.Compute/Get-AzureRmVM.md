@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 6250EC11-79CF-428B-A72F-9BD72C1751F0
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVM.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Get-AzureRmVM.md
 ---
 
 # Get-AzureRmVM
@@ -17,24 +14,23 @@ Gets the properties of a virtual machine.
 
 ### ListAllVirtualMachinesParamSet (Default)
 ```
-Get-AzureRmVM [-Status] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzureRmVM [-Status] [<CommonParameters>]
 ```
 
 ### ListVirtualMachineInResourceGroupParamSet
 ```
-Get-AzureRmVM [-ResourceGroupName] <String> [-Status] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzureRmVM [-ResourceGroupName] <String> [-Status] [<CommonParameters>]
 ```
 
 ### GetVirtualMachineInResourceGroupParamSet
 ```
 Get-AzureRmVM [-ResourceGroupName] <String> [-Name] <String> [-Status] [-DisplayHint <DisplayHintType>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### ListNextLinkVirtualMachinesParamSet
 ```
-Get-AzureRmVM [-Status] [-NextLink] <Uri> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzureRmVM [-Status] [-NextLink] <Uri> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,9 +82,9 @@ Valid values are:
 
 -- Expand: displays all properties in all levels
 ```yaml
-Type: Microsoft.Azure.Commands.Compute.Models.DisplayHintType
+Type: DisplayHintType
 Parameter Sets: GetVirtualMachineInResourceGroupParamSet
-Aliases:
+Aliases: 
 Accepted values: Compact, Expand
 
 Required: False
@@ -102,7 +98,7 @@ Accept wildcard characters: False
 Specifies the name of the virtual machine to get.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: GetVirtualMachineInResourceGroupParamSet
 Aliases: ResourceName, VMName
 
@@ -117,9 +113,9 @@ Accept wildcard characters: False
 Specifies the next link.
 
 ```yaml
-Type: System.Uri
+Type: Uri
 Parameter Sets: ListNextLinkVirtualMachinesParamSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -132,9 +128,9 @@ Accept wildcard characters: False
 Specifies the name of a resource group.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ListVirtualMachineInResourceGroupParamSet, GetVirtualMachineInResourceGroupParamSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -147,25 +143,12 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets only the instance view of the virtual machine.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -175,6 +158,9 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

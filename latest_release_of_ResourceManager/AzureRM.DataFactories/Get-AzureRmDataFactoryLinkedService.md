@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataFactories.dll-Help.xml
 Module Name: AzureRM.DataFactories
 ms.assetid: DFA41A2B-7C8A-42CB-B0B6-5E6FF853EFEE
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactories/get-azurermdatafactorylinkedservice
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Get-AzureRmDataFactoryLinkedService.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Get-AzureRmDataFactoryLinkedService.md
 ---
 
 # Get-AzureRmDataFactoryLinkedService
@@ -71,9 +69,9 @@ Specifies a **PSDataFactory** object.
 This cmdlet gets linked services that belong to the data factory that this parameter specifies.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Type: PSDataFactory
 Parameter Sets: ByFactoryObject
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -87,9 +85,9 @@ Specifies the name of a data factory.
 This cmdlet gets linked services that belong to the data factory that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -98,13 +96,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the name of the linked service about which to get information.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -118,9 +131,9 @@ Specifies the name of an Azure resource group.
 This cmdlet gets linked services that belong to the group that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -129,25 +142,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

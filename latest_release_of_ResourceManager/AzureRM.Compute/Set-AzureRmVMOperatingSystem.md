@@ -1,11 +1,8 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 39AADD19-2EDD-4C1F-BC9E-22186DD9A085
-online version:
+online version: 
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVMOperatingSystem.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVMOperatingSystem.md
 ---
 
 # Set-AzureRmVMOperatingSystem
@@ -19,22 +16,20 @@ Sets operating system properties for a virtual machine.
 ```
 Set-AzureRmVMOperatingSystem [-VM] <PSVirtualMachine> [-Windows] [-ComputerName] <String>
  [-Credential] <PSCredential> [[-CustomData] <String>] [-ProvisionVMAgent] [-EnableAutoUpdate]
- [[-TimeZone] <String>] [-WinRMHttp] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [[-TimeZone] <String>] [-WinRMHttp] [<CommonParameters>]
 ```
 
 ### WindowsWinRmHttps
 ```
 Set-AzureRmVMOperatingSystem [-VM] <PSVirtualMachine> [-Windows] [-ComputerName] <String>
  [-Credential] <PSCredential> [[-CustomData] <String>] [-ProvisionVMAgent] [-EnableAutoUpdate]
- [[-TimeZone] <String>] [-WinRMHttp] [-WinRMHttps] [-WinRMCertificateUrl] <Uri>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [[-TimeZone] <String>] [-WinRMHttp] [-WinRMHttps] [-WinRMCertificateUrl] <Uri> [<CommonParameters>]
 ```
 
 ### Linux
 ```
 Set-AzureRmVMOperatingSystem [-VM] <PSVirtualMachine> [-Linux] [-ComputerName] <String>
- [-Credential] <PSCredential> [[-CustomData] <String>] [-DisablePasswordAuthentication]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Credential] <PSCredential> [[-CustomData] <String>] [-DisablePasswordAuthentication] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,9 +77,9 @@ The command uses variables assigned in previous commands for some parameters.
 Specifies the name of the computer.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 2
@@ -99,9 +94,9 @@ To obtain a credential, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
-Type: System.Management.Automation.PSCredential
+Type: PSCredential
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 3
@@ -116,9 +111,9 @@ This is decoded to a binary array that is saved as a file on the virtual machine
 The maximum length of the binary array is 65535 bytes.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -131,9 +126,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet disables password authentication.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Linux
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -146,9 +141,9 @@ Accept wildcard characters: False
 Indicates that this cmdlet enables auto update.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Windows, WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: False
 Position: 6
@@ -161,9 +156,9 @@ Accept wildcard characters: False
 Indicates that the type of operating system is Linux.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Linux
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -176,9 +171,9 @@ Accept wildcard characters: False
 Indicates that the settings require that the virtual machine agent be installed on the virtual machine.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Windows, WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: False
 Position: 5
@@ -191,9 +186,9 @@ Accept wildcard characters: False
 Specifies the time zone for the virtual machine.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Windows, WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: False
 Position: 7
@@ -208,7 +203,7 @@ To obtain a virtual machine object, use the Get-AzureRmVM cmdlet.
 Create a virtual machine object by using the New-AzureRmVMConfig cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Type: PSVirtualMachine
 Parameter Sets: (All)
 Aliases: VMProfile
 
@@ -223,9 +218,9 @@ Accept wildcard characters: False
 Indicates that the type of operating system is Windows.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Windows, WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -239,9 +234,9 @@ Specifies the URI of a WinRM certificate.
 This needs to be stored in a Key Vault.
 
 ```yaml
-Type: System.Uri
+Type: Uri
 Parameter Sets: WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: True
 Position: 10
@@ -254,9 +249,9 @@ Accept wildcard characters: False
 Indicates that this operating system uses HTTP WinRM.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Windows, WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: False
 Position: 8
@@ -269,9 +264,9 @@ Accept wildcard characters: False
 Indicates that this operating system uses HTTPS WinRM.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WindowsWinRmHttps
-Aliases:
+Aliases: 
 
 Required: True
 Position: 9
@@ -280,23 +275,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

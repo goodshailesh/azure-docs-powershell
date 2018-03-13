@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.DataFactories.dll-Help.xml
 Module Name: AzureRM.DataFactories
 ms.assetid: 5490BB24-127E-4C21-B85F-B70D817B659A
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactories/save-azurermdatafactorylog
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Save-AzureRmDataFactoryLog.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Save-AzureRmDataFactoryLog.md
 ---
 
 # Save-AzureRmDataFactoryLog
@@ -68,9 +66,9 @@ Note that *DownloadLogs* is not specified.
 Specifies a **PSDataFactory** object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Type: PSDataFactory
 Parameter Sets: ByFactoryObject
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -84,9 +82,9 @@ Specifies the name of a data factory.
 This cmdlet downloads log files for the data factory that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -95,14 +93,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DownloadLogs
 Indicates that this cmdlet downloads log files to your local computer.
 If *Ouptut* folder is not specified, files are saved to Documents folder under a subfolder.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -116,9 +129,9 @@ Specifies the ID of the activity run for the data slice.
 Use the Get-AzureRmDataFactoryRun cmdlet to get an ID.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 1
@@ -131,9 +144,9 @@ Accept wildcard characters: False
 Specifies the output folder in which the downloaded log files are saved.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -147,9 +160,9 @@ Specifies the name of an Azure resource group.
 This cmdlet creates a data factory that belongs to the group that this parameter specifies.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ByFactoryName
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -158,25 +171,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### None
+This cmdlet does not accept any input.
 
 ## OUTPUTS
 

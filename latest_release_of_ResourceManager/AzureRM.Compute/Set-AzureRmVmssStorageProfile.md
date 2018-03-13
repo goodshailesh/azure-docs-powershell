@@ -1,6 +1,5 @@
 ---
 external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
-Module Name: AzureRM.Compute
 ms.assetid: 230DAE05-C197-451F-A24C-F4A2DAE4AD04
 online version:
 schema: 2.0.0
@@ -18,11 +17,10 @@ Sets the storage profile properties for the VMSS.
 ```
 Set-AzureRmVmssStorageProfile [-VirtualMachineScaleSet] <VirtualMachineScaleSet>
  [[-ImageReferencePublisher] <String>] [[-ImageReferenceOffer] <String>] [[-ImageReferenceSku] <String>]
- [[-ImageReferenceVersion] <String>] [[-Name] <String>] [[-OsDiskCaching] <CachingTypes>]
+ [[-ImageReferenceVersion] <String>] [-OsDiskName <String>] [[-OsDiskCaching] <CachingTypes>]
  [[-OsDiskCreateOption] <DiskCreateOptionTypes>] [[-OsDiskOsType] <OperatingSystemTypes>] [[-Image] <String>]
  [[-VhdContainer] <String[]>] [-ImageReferenceId <String>] [-ManagedDisk <StorageAccountTypes>]
- [-DataDisk <VirtualMachineScaleSetDataDisk[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-DataDisk <VirtualMachineScaleSetDataDisk[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,9 +43,9 @@ This command sets the storage profile properties for the VMSS named ContosoVMSS.
 Specifies the data disk object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSetDataDisk[]
+Type: VirtualMachineScaleSetDataDisk[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -61,9 +59,9 @@ Specifies the blob URI for the user image.
 VMSS creates an operating system disk in the same container of the user image.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 9
@@ -76,9 +74,9 @@ Accept wildcard characters: False
 Specifies the image reference ID.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -92,9 +90,9 @@ Specifies the type of virtual machine image (VMImage) offer.
 To obtain an image offer, use the Get-AzureRmVMImageOffer cmdlet.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 2
@@ -108,9 +106,9 @@ Specifies the name of a publisher of a VMImage.
 To obtain a publisher, use the Get-AzureRmVMImagePublisher cmdlet.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 1
@@ -124,9 +122,9 @@ Specifies the VMImage SKU.
 To obtain SKUs, use the Get-AzureRmVMImageSku cmdlet.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 3
@@ -140,9 +138,9 @@ Specifies the version of the VMImage.
 To use the latest version, specify a value of latest instead of a particular version.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 4
@@ -155,26 +153,13 @@ Accept wildcard characters: False
 Specifies the managed disk.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.StorageAccountTypes]
+Type: StorageAccountTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: StandardLRS, PremiumLRS
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Name
-Specifies the name of the operating system disk.```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -193,9 +178,9 @@ If you change the caching value, the cmdlet will restart the virtual machine.
 This setting affects the consistency and performance of the disk.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.CachingTypes]
+Type: CachingTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: None, ReadOnly, ReadWrite
 
 Required: False
@@ -215,13 +200,28 @@ The acceptable values for this parameter are:
 If you are using a platform image, you will also use the *imageReference* parameter.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.DiskCreateOptionTypes]
+Type: DiskCreateOptionTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: FromImage, Empty, Attach
 
 Required: False
 Position: 7
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -OsDiskName
+Specifies the name of the operating system disk.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -232,9 +232,9 @@ Specifies the type of operating system on the disk.
 This is only needed for user image scenarios and not for a platform image.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.OperatingSystemTypes]
+Type: OperatingSystemTypes
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: Windows, Linux
 
 Required: False
@@ -248,9 +248,9 @@ Accept wildcard characters: False
 Specifies the container URLs that are used to store operating system disks for the VMSS.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 10
@@ -264,9 +264,9 @@ Specifies the VMSS object.
 To obtain the object, use the New-AzureRmVmssConfig object.
 
 ```yaml
-Type: Microsoft.Azure.Management.Compute.Models.VirtualMachineScaleSet
+Type: VirtualMachineScaleSet
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: True
 Position: 0
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -294,22 +294,9 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
 
 Required: False
 Position: Named

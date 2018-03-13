@@ -1,11 +1,9 @@
----
+﻿---
 external help file: Microsoft.Azure.Commands.AzureBackup.dll-Help.xml
 Module Name: AzureRM.Backup
 ms.assetid: 331F32CB-7777-401C-A42A-23098944CFBE
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.backup/get-azurermbackupjob
 schema: 2.0.0
-content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Get-AzureRmBackupJob.md
-original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/AzureBackup/Commands.AzureBackup/help/Get-AzureRmBackupJob.md
 ---
 
 # Get-AzureRmBackupJob
@@ -102,15 +100,30 @@ The final line of the script tells you that the script has finished.
 
 ## PARAMETERS
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -From
 Specifies the start, as a **DateTime** object, of a time range for the jobs that this cmdlet gets.
 To obtain a **DateTime** object, use the Get-Date cmdlet.
 For more information about **DateTime** objects, type `Get-Help Get-Date`.
 
 ```yaml
-Type: System.Nullable`1[System.DateTime]
+Type: DateTime
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -124,9 +137,9 @@ Specifies a job that this cmdlet gets.
 To obtain an **AzureRmBackupJob** object, use the Get-AzureRmBackupJob cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupJob
+Type: AzureRMBackupJob
 Parameter Sets: JobsListFilter
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
@@ -141,9 +154,9 @@ The ID is the **InstanceId** property of an **AzureRmBackupJob** object.
 To obtain an **AzureRmBackupJob** object, use Get-AzureRmBackupJob.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -165,9 +178,9 @@ The acceptable values for this parameter are:
 - Unregister
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 Accepted values: Backup, ConfigureBackup, DeleteBackupData, Register, Restore, UnProtect, Unregister
 
 Required: False
@@ -191,9 +204,9 @@ The acceptable values for this parameter are:
 You can specify this parameter to find all in progress jobs or all failed jobs.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 Accepted values: Cancelled, Cancelling, Completed, CompletedWithWarnings, Failed, InProgress
 
 Required: False
@@ -209,9 +222,9 @@ The default value is the current system time.
 If you specify this parameter, you must also specify the *From* parameter.
 
 ```yaml
-Type: System.Nullable`1[System.DateTime]
+Type: DateTime
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 
 Required: False
 Position: Named
@@ -225,9 +238,9 @@ Specifies the type of container for which this cmdlet gets backup jobs.
 Currently, the only supported value is AzureVM.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 Accepted values: AzureVM
 
 Required: False
@@ -242,29 +255,14 @@ Specifies the Backup vault for which this cmdlet gets jobs.
 To obtain an **AzureRmBackupVault** object, use the Get-AzureRmBackupVault cmdlet.
 
 ```yaml
-Type: Microsoft.Azure.Commands.AzureBackup.Models.AzureRMBackupVault
+Type: AzureRMBackupVault
 Parameter Sets: FiltersSet
-Aliases:
+Aliases: 
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
