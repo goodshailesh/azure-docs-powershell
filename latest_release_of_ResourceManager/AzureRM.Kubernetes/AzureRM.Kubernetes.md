@@ -1,9 +1,11 @@
-﻿---
+---
 Module Name: AzureRM.Kubernetes
 Module Guid: a97e0c3e-e389-46a6-b73d-2b9bd6909bdb
 Download Help Link: https://docs.microsoft.com/en-us/powershell/
 Help Version: 4.0.0.0
 Locale: en-US
+content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Kubernetes/Commands.Kubernetes/help/AzureRM.Kubernetes.md
+original_content_git_url: https://github.com/Visual-Studio-China/azure-powershell/blob/preview/src/ResourceManager/Kubernetes/Commands.Kubernetes/help/AzureRM.Kubernetes.md
 ---
 
 # AzureRM.Kubernetes.Netcore Module
