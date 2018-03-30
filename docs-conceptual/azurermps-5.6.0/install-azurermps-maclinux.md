@@ -28,7 +28,7 @@ however, you must first install PowerShell Core v6.
 
 ## Step 1: Install PowerShell Core v6
 
-The process of installing PowerShell Core v6 on varies depending on the target operating system.
+The process of installing PowerShell Core v6 varies depending on the target operating system.
 While it is possible to install PowerShell Core v6 on Windows, this article focuses on macOS and
 Linux. If you want to use Azure PowerShell on Windows, see the [install](./install-azurerm-ps.md)
 article for Windows.
@@ -62,7 +62,7 @@ After the import completes, you can test your newly installed and module by atte
 Azure using the following command:
 
 ```powershell
-Login-AzureRMAccount
+Connect-AzureRmAccount
 ```
 
 The above command should prompt you to go to `https://aka.ms/devicelogin` and enter the
